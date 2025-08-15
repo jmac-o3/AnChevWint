@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Executive Fleet Success Stories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 50px 120px rgba(0,0,0,0.5);
+            animation: luxuryReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes luxuryReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(189,195,199,0.1) 0%, transparent 70%);
+            animation: shimmerLuxury 4s ease-in-out infinite;
+        }
+        
+        @keyframes shimmerLuxury {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+        
+        .gold-accent {
+            display: inline-block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 20px auto;
+            animation: goldGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes goldGlow {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scaleX(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scaleX(1.2);
+            }
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            animation: elegantFade 1.5s ease-out;
+        }
+        
+        @keyframes elegantFade {
+            from {
+                opacity: 0;
+                letter-spacing: 10px;
+            }
+            to {
+                opacity: 1;
+                letter-spacing: 2px;
+            }
+        }
+        
+        .subtitle {
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-left: 5px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: testimonialSlide 0.8s ease-out backwards;
+        }
+        
+        .testimonial-card:nth-child(odd) {
+            animation-delay: 0.2s;
+            border-left-color: #d4af37;
+        }
+        
+        .testimonial-card:nth-child(even) {
+            animation-delay: 0.4s;
+            border-left-color: #2c3e50;
+        }
+        
+        @keyframes testimonialSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(212,175,55,0.1);
+            font-family: Georgia, serif;
+            animation: quoteFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes quoteFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #34495e;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d4af37 0%, #f4e8c1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin-right: 15px;
+            animation: avatarPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes avatarPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(212,175,55,0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(212,175,55,0);
+            }
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(212,175,55,0.1), transparent);
+            animation: statsRotate 10s linear infinite;
+        }
+        
+        @keyframes statsRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item {
+            text-align: center;
+            animation: statReveal 1s ease-out backwards;
+        }
+        
+        .stat-item:nth-child(1) { animation-delay: 0.2s; }
+        .stat-item:nth-child(2) { animation-delay: 0.4s; }
+        .stat-item:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes statReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212,175,55,0.3);
+            animation: numberGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes numberGlow {
+            from {
+                text-shadow: 0 0 20px rgba(212,175,55,0.3);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(212,175,55,0.6);
+            }
+        }
+        
+        .stat-label {
+            color: #ecf0f1;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            animation: caseStudyReveal 1s ease-out;
+        }
+        
+        @keyframes caseStudyReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .case-study::after {
+            content: '📊';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.2;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes iconFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(10deg);
+            }
+        }
+        
+        .result-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            animation: resultSlide 0.6s ease-out backwards;
+        }
+        
+        .result-item:nth-child(1) { animation-delay: 0.1s; }
+        .result-item:nth-child(2) { animation-delay: 0.2s; }
+        .result-item:nth-child(3) { animation-delay: 0.3s; }
+        
+        @keyframes resultSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .result-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(212,175,55,0.2);
+        }
+        
+        .result-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            animation: checkSpin 0.6s ease-out;
+        }
+        
+        @keyframes checkSpin {
+            from {
+                transform: rotate(-360deg) scale(0);
+            }
+            to {
+                transform: rotate(0) scale(1);
+            }
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e8c1 50%, #d4af37 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            animation: ctaShine 3s ease-in-out infinite;
+        }
+        
+        @keyframes ctaShine {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+            }
+            50% {
+                box-shadow: 0 15px 40px rgba(212,175,55,0.5);
+            }
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: ctaSweep 4s infinite;
+        }
+        
+        @keyframes ctaSweep {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+        
+        .executive-btn {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .executive-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(212,175,55,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .executive-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .executive-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .luxury-footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: #ecf0f1;
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .luxury-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            animation: footerGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes footerGlow {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Executive Success</h1>
+            <div class="gold-accent"></div>
+            <p class="subtitle">San Antonio's Business Elite Choose Ancira</p>
+        </div>
+        
+        <div style="padding: 40px 30px;">
+            <p style="font-size: 20px; color: #2c3e50; margin-bottom: 20px;">Dear {FirstName},</p>
+            
+            <p style="color: #5a6c7d; line-height: 1.8; margin-bottom: 30px; font-size: 16px;">
+                When San Antonio's most successful businesses need fleet solutions, they turn to our exclusive concierge service. Here's what your peers are experiencing:
+            </p>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "Ancira's VIP fleet service transformed our operations. We saved $47,000 on our initial purchase, but the real value? Their concierge team handles everything. Zero downtime in 18 months, priority service that actually means priority, and a dedicated specialist who knows our business inside out."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div>
+                        <strong style="color: #2c3e50; font-size: 18px;">Mike Rodriguez</strong><br>
+                        <span style="color: #7f8c8d;">CEO, Rodriguez Plumbing Services</span><br>
+                        <span style="color: #d4af37; font-weight: 500;">Fleet: 12 Silverado 2500s, 8 Express Vans</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "The executive treatment at Ancira is unmatched. Mobile service comes to our headquarters, our drivers get VIP treatment at their facilities, and our account manager anticipates our needs before we even ask. It's like having a fleet department without the overhead."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SC</div>
+                    <div>
+                        <strong style="color: #2c3e50; font-size: 18px;">Sarah Chen</strong><br>
+                        <span style="color: #7f8c8d;">President, Express Logistics SA</span><br>
+                        <span style="color: #2c3e50; font-weight: 500;">Fleet: 25 vehicles and growing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <h3 style="color: #ecf0f1; font-size: 28px; font-weight: 300; letter-spacing: 2px; margin-bottom: 10px;">BY THE NUMBERS</h3>
+                <div class="gold-accent"></div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Elite Businesses Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$2.3M</div>
+                        <div class="stat-label">Average Annual Savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Retention Rate</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3 style="color: #2c3e50; margin-bottom: 20px; font-size: 24px;">📊 Executive Case Study: ABC Construction</h3>
+                <p style="color: #5a6c7d; line-height: 1.8; margin-bottom: 20px;">
+                    <strong>Challenge:</strong> Aging fleet eating into profit margins<br>
+                    <strong>Solution:</strong> Custom lease program with full maintenance coverage<br>
+                    <strong>Results:</strong>
+                </p>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <span style="color: #2c3e50;">40% reduction in total fleet costs</span>
+                </div>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <span style="color: #2c3e50;">Zero unexpected maintenance expenses</span>
+                </div>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <span style="color: #2c3e50;">15% increase in driver satisfaction scores</span>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h3 style="color: #2c3e50; margin: 0 0 15px; font-size: 28px; position: relative; z-index: 1;">Join San Antonio's Business Elite</h3>
+                <p style="color: #34495e; margin: 15px 0; position: relative; z-index: 1; font-size: 18px;">Experience the Ancira difference with a private consultation</p>
+                <a href="https://www.ancirachev.com/schedule-service/" class="executive-btn">
+                    Schedule Executive Meeting
+                </a>
+            </div>
+            
+            <p style="color: #5a6c7d; line-height: 1.8; font-size: 16px; margin: 30px 0;">
+                {FirstName}, I'd be honored to show you how we've helped businesses like {CompanyName} achieve exceptional results. When would be convenient for a brief executive consultation?
+            </p>
+            
+            <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #d4af37;">
+                <p style="color: #5a6c7d;">
+                    At your service,<br>
+                    <strong style="font-size: 20px; color: #2c3e50;">Your Executive Fleet Advisor</strong><br>
+                    <span style="color: #d4af37;">Ancira Fleet Concierge Services</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="luxury-footer">
+            <p style="margin: 10px 0; font-size: 16px; letter-spacing: 1px;">EXECUTIVE FLEET SERVICES</p>
+            <p style="margin: 10px 0; font-size: 20px; font-weight: bold; color: #d4af37;">210.681.4900</p>
+            <p style="margin: 20px 0;">
+                <a href="https://www.ancirachev.com/about-us/" style="color: #d4af37; text-decoration: none; margin: 0 15px;">Success Stories</a> |
+                <a href="https://www.ancirachev.com/reviews/" style="color: #d4af37; text-decoration: none; margin: 0 15px;">References</a> |
+                <a href="#" style="color: #d4af37; text-decoration: none; margin: 0 15px;">Private Portal</a>
+            </p>
+            <p style="font-size: 12px; color: #7f8c8d; margin-top: 20px;">© 2025 Ancira Auto Group | Executive Fleet Division</p>
+        </div>
+    </div>
+</body>
+</html>

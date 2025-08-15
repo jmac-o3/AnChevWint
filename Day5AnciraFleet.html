@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚛 Work-Ready Fleet Vehicles - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated truck silhouettes background */
+        .truck-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .truck-silhouette {
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            opacity: 0.02;
+            animation: drive 25s linear infinite;
+        }
+
+        .truck-silhouette::before {
+            content: '🚛';
+            font-size: 40px;
+            position: absolute;
+        }
+
+        .truck-silhouette:nth-child(1) {
+            top: 20%;
+            animation-delay: 0s;
+        }
+
+        .truck-silhouette:nth-child(2) {
+            top: 40%;
+            animation-delay: 8s;
+        }
+
+        .truck-silhouette:nth-child(3) {
+            top: 60%;
+            animation-delay: 16s;
+        }
+
+        @keyframes drive {
+            0% { left: -100px; transform: scaleX(1); }
+            45% { left: 50%; transform: scaleX(1); }
+            55% { left: 50%; transform: scaleX(-1); }
+            100% { left: calc(100% + 100px); transform: scaleX(-1); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Performance indicator scanning effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f39c12, transparent);
+            animation: performance-scan 2.5s linear infinite;
+        }
+
+        @keyframes performance-scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo-accent {
+            color: #f39c12;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Vehicle Showcase Grid */
+        .vehicle-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 45px 0;
+        }
+
+        .vehicle-card {
+            background: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: #e74c3c;
+        }
+
+        .vehicle-image {
+            height: 200px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vehicle-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .vehicle-card:hover .vehicle-image::before {
+            left: 100%;
+        }
+
+        .vehicle-info {
+            padding: 25px;
+        }
+
+        .vehicle-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .vehicle-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .vehicle-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            padding: 5px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .spec-label {
+            color: #7f8c8d;
+        }
+
+        .spec-value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .vehicle-cta {
+            text-align: center;
+        }
+
+        .vehicle-button {
+            background: #e74c3c;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .vehicle-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Fleet Features Grid */
+        .fleet-features {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 45px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fleet-features::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .features-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            margin: 45px 0;
+        }
+
+        .comparison-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: #e74c3c;
+            color: #ffffff;
+            padding: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e8f4fd;
+        }
+
+        /* Testimonial */
+        .fleet-testimonial {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 35px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #e74c3c;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            color: #5a6c7d;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cta-subtitle {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            margin: 0 10px 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button.primary {
+            background: #e74c3c;
+            color: #ffffff;
+        }
+
+        .cta-button.primary:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+        }
+
+        .cta-button.secondary:hover {
+            background: #2c3e50;
+            color: #ffffff;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #f39c12;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .vehicle-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 12px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated truck background -->
+        <div class="truck-animation">
+            <div class="truck-silhouette"></div>
+            <div class="truck-silhouette"></div>
+            <div class="truck-silhouette"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">Commercial Vehicle Specialists</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Work-Ready Vehicles Built for Your Business</h1>
+                <p class="hero-subtitle">From compact work trucks to heavy-duty haulers, we have the perfect fleet vehicles to power your operation. Every vehicle comes fleet-ready with commercial warranties.</p>
+            </div>
+
+            <div class="vehicle-showcase">
+                <div class="vehicle-card">
+                    <div class="vehicle-image">🚐</div>
+                    <div class="vehicle-info">
+                        <div class="vehicle-name">Chevrolet Colorado</div>
+                        <div class="vehicle-price">Starting at $32,995</div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Payload</span>
+                                <span class="spec-value">1,550 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Towing</span>
+                                <span class="spec-value">7,700 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">MPG</span>
+                                <span class="spec-value">28 highway</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">2.5L 4-cyl</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-cta">
+                            <a href="tel:210-231-4350" class="vehicle-button">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">🚛</div>
+                    <div class="vehicle-info">
+                        <div class="vehicle-name">Chevrolet Silverado 1500</div>
+                        <div class="vehicle-price">Starting at $36,995</div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Payload</span>
+                                <span class="spec-value">2,280 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Towing</span>
+                                <span class="spec-value">13,300 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">MPG</span>
+                                <span class="spec-value">24 highway</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">2.7L Turbo</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-cta">
+                            <a href="tel:210-231-4350" class="vehicle-button">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">🚚</div>
+                    <div class="vehicle-info">
+                        <div class="vehicle-name">Chevrolet Silverado 2500HD</div>
+                        <div class="vehicle-price">Starting at $42,995</div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Payload</span>
+                                <span class="spec-value">3,979 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Towing</span>
+                                <span class="spec-value">18,500 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">MPG</span>
+                                <span class="spec-value">20 highway</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">6.6L V8</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-cta">
+                            <a href="tel:210-231-4350" class="vehicle-button">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">🚙</div>
+                    <div class="vehicle-info">
+                        <div class="vehicle-name">Chevrolet Express Van</div>
+                        <div class="vehicle-price">Starting at $38,995</div>
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Cargo</span>
+                                <span class="spec-value">239 cu ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Payload</span>
+                                <span class="spec-value">4,080 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">MPG</span>
+                                <span class="spec-value">16 highway</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">6.0L V8</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-cta">
+                            <a href="tel:210-231-4350" class="vehicle-button">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fleet-features">
+                <h2 class="features-title">Every Fleet Vehicle Includes</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-title">3-Year Commercial Warranty</div>
+                        <div class="feature-description">Comprehensive coverage designed for commercial use and high mileage operations</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔧</div>
+                        <div class="feature-title">Fleet Service Priority</div>
+                        <div class="feature-description">Dedicated service lanes and priority scheduling to minimize downtime</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-title">OnStar Commercial</div>
+                        <div class="feature-description">Fleet tracking, diagnostics, and emergency assistance for business vehicles</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">Fleet Pricing</div>
+                        <div class="feature-description">Volume discounts and special commercial pricing on all vehicles and accessories</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚛</div>
+                        <div class="feature-title">Work-Ready Packages</div>
+                        <div class="feature-description">Pre-configured upfit packages for specific industries and applications</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">Fast Delivery</div>
+                        <div class="feature-description">Expedited ordering and delivery to get your fleet on the road quickly</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-section">
+                <h2 class="comparison-title">Fleet Vehicle Comparison</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Best For</th>
+                            <th>Payload</th>
+                            <th>Towing</th>
+                            <th>Starting Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Colorado</strong></td>
+                            <td>Light Duty Work</td>
+                            <td>1,550 lbs</td>
+                            <td>7,700 lbs</td>
+                            <td>$32,995</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Silverado 1500</strong></td>
+                            <td>General Purpose</td>
+                            <td>2,280 lbs</td>
+                            <td>13,300 lbs</td>
+                            <td>$36,995</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Silverado 2500HD</strong></td>
+                            <td>Heavy Hauling</td>
+                            <td>3,979 lbs</td>
+                            <td>18,500 lbs</td>
+                            <td>$42,995</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Express Van</strong></td>
+                            <td>Cargo/Delivery</td>
+                            <td>4,080 lbs</td>
+                            <td>10,000 lbs</td>
+                            <td>$38,995</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="fleet-testimonial">
+                <p class="testimonial-text">
+                    "We've been running our landscaping business with Ancira's Chevrolet trucks for 8 years. The reliability is outstanding, and the fleet service team keeps our 12 vehicles running without any unexpected downtime."
+                </p>
+                <p class="testimonial-author">- Maria Santos, Owner, Green Valley Landscaping</p>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-title">Build Your Custom Fleet Quote</div>
+                <div class="cta-subtitle">Get personalized pricing and vehicle recommendations for your business</div>
+                
+                <a href="tel:210-231-4350" class="cta-button primary">Call Fleet Specialist: (210) 231-4350</a>
+                <a href="https://www.ancirachev.com/fleet-quote" class="cta-button secondary">Build Quote Online</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Center</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Fleet Sales: Mon-Fri 7:00 AM - 7:00 PM • Sat 8:30 AM - 3:00 PM</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

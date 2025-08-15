@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 Real Fleet Success Stories - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated success icons background */
+        .success-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .success-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            opacity: 0.04;
+            animation: rise 12s ease-in-out infinite;
+        }
+
+        .success-icon::before {
+            content: '📈';
+            font-size: 50px;
+            position: absolute;
+        }
+
+        .success-icon:nth-child(1) {
+            top: 80%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .success-icon:nth-child(2) {
+            top: 85%;
+            right: 20%;
+            animation-delay: 3s;
+        }
+
+        .success-icon:nth-child(3) {
+            top: 75%;
+            left: 50%;
+            animation-delay: 6s;
+        }
+
+        .success-icon:nth-child(4) {
+            top: 90%;
+            right: 45%;
+            animation-delay: 9s;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0px) scale(1); opacity: 0.04; }
+            50% { transform: translateY(-30px) scale(1.1); opacity: 0.06; }
+            100% { transform: translateY(-60px) scale(0.9); opacity: 0.02; }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Growth tracking effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #f1c40f 0%, #f39c12 25%, #e67e22 50%, #e74c3c 75%, #f1c40f 100%);
+            animation: growth-track 4s linear infinite;
+        }
+
+        @keyframes growth-track {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo-accent {
+            color: #f1c40f;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .success-highlight {
+            color: #16a085;
+            font-size: 42px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Success Stats */
+        .success-stats {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .stats-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #f1c40f;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            margin: 45px 0;
+        }
+
+        .case-studies-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .case-study {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 35px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 4px solid #16a085;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .case-study:nth-child(2) { animation-delay: 0.2s; }
+        .case-study:nth-child(3) { animation-delay: 0.4s; }
+        .case-study:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .case-study:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .company-icon {
+            font-size: 48px;
+            margin-right: 20px;
+        }
+
+        .company-info {
+            flex: 1;
+        }
+
+        .company-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company-industry {
+            font-size: 14px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #16a085;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-description {
+            font-size: 14px;
+            color: #5a6c7d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .case-quote {
+            font-style: italic;
+            color: #16a085;
+            font-size: 15px;
+            border-left: 3px solid #16a085;
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        .case-author {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        /* Industry Showcase */
+        .industry-showcase {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 45px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+        }
+
+        .industry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .industry-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .industry-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .industry-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .industry-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .industry-count {
+            font-size: 14px;
+            color: #f1c40f;
+            font-weight: 500;
+        }
+
+        /* ROI Calculator */
+        .roi-calculator {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #16a085;
+        }
+
+        .calculator-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .roi-example {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .roi-scenario {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .roi-breakdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .roi-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .roi-label {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .roi-value {
+            color: #16a085;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .roi-total {
+            background: #16a085;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .roi-total-label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .roi-total-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cta-subtitle {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            margin: 0 10px 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button.primary {
+            background: #16a085;
+            color: #ffffff;
+        }
+
+        .cta-button.primary:hover {
+            background: #138d75;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+        }
+
+        .cta-button.secondary:hover {
+            background: #2c3e50;
+            color: #ffffff;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1abc9c;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .case-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .industry-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .roi-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated success background -->
+        <div class="success-animation">
+            <div class="success-icon"></div>
+            <div class="success-icon"></div>
+            <div class="success-icon"></div>
+            <div class="success-icon"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">Proven Fleet Success Stories</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">See How <span class="success-highlight">1,200+</span> Companies Transformed Their Fleets</h1>
+                <p class="hero-subtitle">Real results from real businesses. These San Antonio companies trusted us with their fleet needs and achieved remarkable ROI. Your success story could be next.</p>
+            </div>
+
+            <div class="success-stats">
+                <h2 class="stats-title">Fleet Success by the Numbers</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">1,247</div>
+                        <div class="stat-label">Fleets Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">96%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$12M</div>
+                        <div class="stat-label">Client Savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15,800</div>
+                        <div class="stat-label">Vehicles Delivered</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-studies">
+                <h2 class="case-studies-title">Real Success Stories</h2>
+                
+                <div class="case-study">
+                    <div class="case-header">
+                        <div class="company-icon">🏗️</div>
+                        <div class="company-info">
+                            <div class="company-name">Martinez Construction</div>
+                            <div class="company-industry">Construction & Contracting</div>
+                        </div>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <div class="metric-value">32</div>
+                            <div class="metric-label">Vehicles</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$89K</div>
+                            <div class="metric-label">Saved Annually</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">18 mo</div>
+                            <div class="metric-label">ROI Payback</div>
+                        </div>
+                    </div>
+                    <div class="case-description">
+                        Replaced their aging fleet of 32 work trucks with new Silverado 2500HDs. Reduced maintenance costs by 65% and improved fuel efficiency by 28%. The reliable fleet enabled them to take on 40% more projects.
+                    </div>
+                    <div class="case-quote">
+                        "Our downtime went from 15% to under 2%. That alone paid for the entire fleet upgrade."
+                    </div>
+                    <div class="case-author">- Carlos Martinez, Fleet Manager</div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-header">
+                        <div class="company-icon">🚚</div>
+                        <div class="company-info">
+                            <div class="company-name">SA Delivery Solutions</div>
+                            <div class="company-industry">Logistics & Delivery</div>
+                        </div>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <div class="metric-value">18</div>
+                            <div class="metric-label">Express Vans</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$52K</div>
+                            <div class="metric-label">Annual Savings</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">35%</div>
+                            <div class="metric-label">Fuel Reduction</div>
+                        </div>
+                    </div>
+                    <div class="case-description">
+                        Transitioned their delivery fleet to Chevrolet Express vans with optimized cargo configurations. Improved delivery efficiency and reduced fuel costs significantly through better route planning capabilities.
+                    </div>
+                    <div class="case-quote">
+                        "The Express vans doubled our daily delivery capacity while cutting fuel costs in half."
+                    </div>
+                    <div class="case-author">- Jennifer Rodriguez, Operations Director</div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-header">
+                        <div class="company-icon">⚡</div>
+                        <div class="company-info">
+                            <div class="company-name">Alamo Electric Co.</div>
+                            <div class="company-industry">Electrical Services</div>
+                        </div>
+                    </div>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <div class="metric-value">25</div>
+                            <div class="metric-label">Service Trucks</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$76K</div>
+                            <div class="metric-label">Total Savings</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12 mo</div>
+                            <div class="metric-label">Payback Period</div>
+                        </div>
+                    </div>
+                    <div class="case-description">
+                        Upgraded to Colorado work trucks with custom electrical upfitting. The specialized compartments and power outlets increased technician productivity by 45% and reduced job completion time.
+                    </div>
+                    <div class="case-quote">
+                        "Our technicians can complete 3 more service calls per day with the new fleet setup."
+                    </div>
+                    <div class="case-author">- Mike Thompson, Fleet Supervisor</div>
+                </div>
+            </div>
+
+            <div class="industry-showcase">
+                <h2 class="industry-title">Industries We Serve Successfully</h2>
+                <div class="industry-grid">
+                    <div class="industry-item">
+                        <div class="industry-icon">🏗️</div>
+                        <div class="industry-name">Construction</div>
+                        <div class="industry-count">340+ Fleets</div>
+                    </div>
+                    <div class="industry-item">
+                        <div class="industry-icon">🔧</div>
+                        <div class="industry-name">Service Companies</div>
+                        <div class="industry-count">285+ Fleets</div>
+                    </div>
+                    <div class="industry-item">
+                        <div class="industry-icon">🚚</div>
+                        <div class="industry-name">Delivery & Logistics</div>
+                        <div class="industry-count">195+ Fleets</div>
+                    </div>
+                    <div class="industry-item">
+                        <div class="industry-icon">🌱</div>
+                        <div class="industry-name">Landscaping</div>
+                        <div class="industry-count">165+ Fleets</div>
+                    </div>
+                    <div class="industry-item">
+                        <div class="industry-icon">🏢</div>
+                        <div class="industry-name">Government</div>
+                        <div class="industry-count">142+ Fleets</div>
+                    </div>
+                    <div class="industry-item">
+                        <div class="industry-icon">⚡</div>
+                        <div class="industry-name">Utilities</div>
+                        <div class="industry-count">120+ Fleets</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roi-calculator">
+                <h2 class="calculator-title">Your Potential ROI Scenario</h2>
+                <div class="roi-example">
+                    <div class="roi-scenario">Example: 15-Vehicle Service Fleet</div>
+                    <div class="roi-breakdown">
+                        <div class="roi-item">
+                            <span class="roi-label">Annual Fuel Savings</span>
+                            <span class="roi-value">$42,000</span>
+                        </div>
+                        <div class="roi-item">
+                            <span class="roi-label">Maintenance Reduction</span>
+                            <span class="roi-value">$38,500</span>
+                        </div>
+                        <div class="roi-item">
+                            <span class="roi-label">Productivity Gains</span>
+                            <span class="roi-value">$55,200</span>
+                        </div>
+                        <div class="roi-item">
+                            <span class="roi-label">Insurance Savings</span>
+                            <span class="roi-value">$12,800</span>
+                        </div>
+                    </div>
+                    <div class="roi-total">
+                        <div class="roi-total-label">Total Annual Benefit</div>
+                        <div class="roi-total-value">$148,500</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-title">Join Our Success Stories</div>
+                <div class="cta-subtitle">Let us create a custom success plan for your fleet</div>
+                
+                <a href="tel:210-231-4350" class="cta-button primary">Call Success Team: (210) 231-4350</a>
+                <a href="https://www.ancirachev.com/fleet-success-consultation" class="cta-button secondary">Book Consultation</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Success Center</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Success Stories: Mon-Fri 7:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

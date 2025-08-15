@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏦 Fleet Financing Solutions - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated percentage signs background */
+        .percent-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .percent-sign {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            opacity: 0.04;
+            animation: drift 18s ease-in-out infinite;
+        }
+
+        .percent-sign::before {
+            content: '%';
+            font-size: 50px;
+            font-weight: bold;
+            color: #3498db;
+            position: absolute;
+        }
+
+        .percent-sign:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .percent-sign:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            animation-delay: 4s;
+        }
+
+        .percent-sign:nth-child(3) {
+            bottom: 35%;
+            left: 20%;
+            animation-delay: 8s;
+        }
+
+        .percent-sign:nth-child(4) {
+            bottom: 20%;
+            right: 25%;
+            animation-delay: 12s;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.04; }
+            25% { transform: translateY(-15px) rotate(3deg); opacity: 0.06; }
+            50% { transform: translateY(-8px) rotate(-2deg); opacity: 0.05; }
+            75% { transform: translateY(-20px) rotate(1deg); opacity: 0.04; }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Credit approval scanning effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #f39c12, transparent);
+            animation: approval-scan 3s linear infinite;
+        }
+
+        @keyframes approval-scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo-accent {
+            color: #f39c12;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .rate-highlight {
+            color: #3498db;
+            font-size: 42px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Financing Options Grid */
+        .financing-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 45px 0;
+        }
+
+        .option-card {
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 35px;
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-top: 4px solid #3498db;
+            overflow: hidden;
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-card:hover::before {
+            left: 100%;
+        }
+
+        .option-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .option-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .option-rate {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3498db;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .option-description {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Incentives Section */
+        .incentives-section {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            padding: 45px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .incentives-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .incentives-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .incentives-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .incentive-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .incentive-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .incentive-amount {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #f39c12;
+        }
+
+        .incentive-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Approval Process Timeline */
+        .approval-timeline {
+            margin: 45px 0;
+            position: relative;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: #3498db;
+        }
+
+        .timeline-step {
+            text-align: center;
+            position: relative;
+            opacity: 0;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .timeline-step:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-step:nth-child(2) { animation-delay: 0.3s; }
+        .timeline-step:nth-child(3) { animation-delay: 0.5s; }
+        .timeline-step:nth-child(4) { animation-delay: 0.7s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .step-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .step-description {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        /* Payment Calculator */
+        .payment-calculator {
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .calculator-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            text-align: center;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ecf0f1;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            transition: border-color 0.3s ease;
+        }
+
+        .calc-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .payment-result {
+            text-align: center;
+            padding: 25px;
+            background: #3498db;
+            color: #ffffff;
+            border-radius: 8px;
+        }
+
+        .result-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .result-amount {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        /* Testimonial */
+        .financing-testimonial {
+            background: linear-gradient(135d, #f8f9fa 0%, #e9ecef 100%);
+            padding: 35px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #3498db;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            color: #5a6c7d;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cta-subtitle {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            margin: 0 10px 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button.primary {
+            background: #3498db;
+            color: #ffffff;
+        }
+
+        .cta-button.primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+        }
+
+        .cta-button.secondary:hover {
+            background: #2c3e50;
+            color: #ffffff;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #f39c12;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .financing-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .incentives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            
+            .calculator-inputs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated percentage background -->
+        <div class="percent-animation">
+            <div class="percent-sign"></div>
+            <div class="percent-sign"></div>
+            <div class="percent-sign"></div>
+            <div class="percent-sign"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">Fleet Financing Solutions</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Fleet Financing Starting at <span class="rate-highlight">1.9%</span> APR</h1>
+                <p class="hero-subtitle">Competitive rates, flexible terms, and fast approvals for commercial fleets of all sizes. Get pre-approved in under 24 hours.</p>
+            </div>
+
+            <div class="financing-options">
+                <div class="option-card">
+                    <div class="option-icon">🏦</div>
+                    <div class="option-title">Commercial Purchase</div>
+                    <div class="option-rate">1.9% APR</div>
+                    <div class="option-description">Traditional financing with competitive rates for fleet vehicle purchases. Terms up to 84 months available.</div>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">📋</div>
+                    <div class="option-title">Fleet Leasing</div>
+                    <div class="option-rate">$299/mo</div>
+                    <div class="option-description">Lower monthly payments with flexible end-of-lease options. Perfect for growing businesses.</div>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">🔄</div>
+                    <div class="option-title">Lease-to-Own</div>
+                    <div class="option-rate">2.4% APR</div>
+                    <div class="option-description">Start with a lease and convert to ownership. Best of both worlds for fleet managers.</div>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">⚡</div>
+                    <div class="option-title">Fleet Line of Credit</div>
+                    <div class="option-rate">3.9% APR</div>
+                    <div class="option-description">Revolving credit line for ongoing fleet needs. Use as needed, pay only for what you use.</div>
+                </div>
+            </div>
+
+            <div class="incentives-section">
+                <h2 class="incentives-title">Current Fleet Incentives</h2>
+                <div class="incentives-grid">
+                    <div class="incentive-item">
+                        <div class="incentive-amount">$5,000</div>
+                        <div class="incentive-label">Fleet Customer Cash</div>
+                    </div>
+                    <div class="incentive-item">
+                        <div class="incentive-amount">$2,500</div>
+                        <div class="incentive-label">Commercial Bonus</div>
+                    </div>
+                    <div class="incentive-item">
+                        <div class="incentive-amount">$1,500</div>
+                        <div class="incentive-label">Loyalty Rebate</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="approval-timeline">
+                <h2 class="timeline-title">Fast-Track Approval Process</h2>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="step-circle">1</div>
+                        <div class="step-title">Submit Application</div>
+                        <div class="step-description">Quick online form or phone call</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-circle">2</div>
+                        <div class="step-title">Credit Review</div>
+                        <div class="step-description">Expedited business credit analysis</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-circle">3</div>
+                        <div class="step-title">Approval Decision</div>
+                        <div class="step-description">Response within 2-4 hours</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-circle">4</div>
+                        <div class="step-title">Funding Ready</div>
+                        <div class="step-description">Same-day funding available</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-calculator">
+                <h2 class="calculator-title">Fleet Payment Calculator</h2>
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label class="input-label">Vehicle Price</label>
+                        <input type="number" class="calc-input" id="vehiclePrice" value="45000" min="10000" max="100000">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Down Payment</label>
+                        <input type="number" class="calc-input" id="downPayment" value="9000" min="0" max="50000">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Term (Months)</label>
+                        <input type="number" class="calc-input" id="loanTerm" value="60" min="12" max="84">
+                    </div>
+                </div>
+                
+                <div class="payment-result">
+                    <div class="result-label">Estimated Monthly Payment</div>
+                    <div class="result-amount" id="monthlyPayment">$652</div>
+                </div>
+            </div>
+
+            <div class="financing-testimonial">
+                <p class="testimonial-text">
+                    "Ancira's fleet financing team made expanding our construction fleet incredibly easy. We got approved for a $400,000 line of credit in less than 6 hours, and the rates were better than our bank offered."
+                </p>
+                <p class="testimonial-author">- Robert Chen, Fleet Director, Lone Star Construction</p>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-title">Get Pre-Approved Today</div>
+                <div class="cta-subtitle">No commitment, fast approval, competitive rates guaranteed</div>
+                
+                <a href="tel:210-231-4350" class="cta-button primary">Call: (210) 231-4350</a>
+                <a href="https://www.ancirachev.com/fleet-financing" class="cta-button secondary">Apply Online</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Financing</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Fleet Finance Available: Mon-Fri 7:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Payment calculator functionality
+        function calculatePayment() {
+            const price = parseFloat(document.getElementById('vehiclePrice').value) || 0;
+            const down = parseFloat(document.getElementById('downPayment').value) || 0;
+            const term = parseFloat(document.getElementById('loanTerm').value) || 60;
+            
+            const loanAmount = price - down;
+            const rate = 0.019 / 12; // 1.9% APR monthly
+            
+            let payment = 0;
+            if (loanAmount > 0 && rate > 0) {
+                payment = loanAmount * (rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1);
+            }
+            
+            document.getElementById('monthlyPayment').textContent = '$' + Math.round(payment).toLocaleString();
+        }
+
+        // Add event listeners
+        document.getElementById('vehiclePrice').addEventListener('input', calculatePayment);
+        document.getElementById('downPayment').addEventListener('input', calculatePayment);
+        document.getElementById('loanTerm').addEventListener('input', calculatePayment);
+        
+        // Calculate on load
+        calculatePayment();
+    </script>
+</body>
+</html>

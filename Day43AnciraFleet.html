@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Partnership & Long-Term Success - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #f39c12;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 40px 30px;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .partnership-promise {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .promise-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .promise-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .partnership-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pillar-card:nth-child(1) { border-left-color: #e74c3c; }
+        .pillar-card:nth-child(2) { border-left-color: #f39c12; }
+        .pillar-card:nth-child(3) { border-left-color: #27ae60; }
+        .pillar-card:nth-child(4) { border-left-color: #3498db; }
+        .pillar-card:nth-child(5) { border-left-color: #9b59b6; }
+        .pillar-card:nth-child(6) { border-left-color: #e67e22; }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .pillar-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .pillar-card:nth-child(1) .pillar-icon { color: #e74c3c; }
+        .pillar-card:nth-child(2) .pillar-icon { color: #f39c12; }
+        .pillar-card:nth-child(3) .pillar-icon { color: #27ae60; }
+        .pillar-card:nth-child(4) .pillar-icon { color: #3498db; }
+        .pillar-card:nth-child(5) .pillar-icon { color: #9b59b6; }
+        .pillar-card:nth-child(6) .pillar-icon { color: #e67e22; }
+
+        .pillar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .pillar-description {
+            color: #7f8c8d;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .success-metrics {
+            background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+            padding: 35px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .metrics-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-number {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .metric-item:nth-child(1) .metric-number { color: #e74c3c; }
+        .metric-item:nth-child(2) .metric-number { color: #27ae60; }
+        .metric-item:nth-child(3) .metric-number { color: #3498db; }
+        .metric-item:nth-child(4) .metric-number { color: #f39c12; }
+
+        .metric-label {
+            color: #2c3e50;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .metric-description {
+            color: #7f8c8d;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .lifecycle-support {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border: 1px solid #ecf0f1;
+        }
+
+        .lifecycle-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .lifecycle-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .phase-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 3px solid;
+        }
+
+        .phase-card:nth-child(1) { border-top-color: #e74c3c; }
+        .phase-card:nth-child(2) { border-top-color: #f39c12; }
+        .phase-card:nth-child(3) { border-top-color: #27ae60; }
+        .phase-card:nth-child(4) { border-top-color: #3498db; }
+        .phase-card:nth-child(5) { border-top-color: #9b59b6; }
+        .phase-card:nth-child(6) { border-top-color: #e67e22; }
+
+        .phase-card:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .phase-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .phase-card:nth-child(1) .phase-icon { color: #e74c3c; }
+        .phase-card:nth-child(2) .phase-icon { color: #f39c12; }
+        .phase-card:nth-child(3) .phase-icon { color: #27ae60; }
+        .phase-card:nth-child(4) .phase-icon { color: #3498db; }
+        .phase-card:nth-child(5) .phase-icon { color: #9b59b6; }
+        .phase-card:nth-child(6) .phase-icon { color: #e67e22; }
+
+        .phase-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .phase-description {
+            color: #7f8c8d;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .testimonial-section {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .testimonial-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 16px;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin: 0 10px 10px;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .cta-button.secondary:hover {
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 25px;
+            text-align: center;
+            color: white;
+        }
+
+        .footer-logo {
+            color: #f39c12;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .footer-content {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .main-content {
+                padding: 25px 20px;
+            }
+            
+            .hero-title {
+                font-size: 26px;
+            }
+            
+            .partnership-pillars {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo">ANCIRA WINTON CHEVROLET</div>
+            <div class="tagline">2023 Chevrolet Dealer of the Year | Your Strategic Fleet Partner</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Fleet Partnership & Long-Term Success</h1>
+                <p class="hero-subtitle">Building strategic relationships that deliver lasting value.<br>Your trusted partner for comprehensive fleet solutions.</p>
+            </div>
+
+            <div class="partnership-promise">
+                <h2 class="promise-title">Our Partnership Commitment</h2>
+                <p class="promise-text">We don't just sell vehicles - we build lasting partnerships. As your Chevrolet Business Elite dealer, we're committed to your long-term success through every phase of your fleet lifecycle.</p>
+            </div>
+
+            <div class="partnership-pillars">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h3 class="pillar-title">Strategic Consultation</h3>
+                    <p class="pillar-description">Dedicated account managers who understand your business and provide strategic guidance for fleet optimization and growth planning.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">📊</div>
+                    <h3 class="pillar-title">Data-Driven Insights</h3>
+                    <p class="pillar-description">Comprehensive fleet analytics and reporting to help you make informed decisions and maximize operational efficiency.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">🔧</div>
+                    <h3 class="pillar-title">Proactive Support</h3>
+                    <p class="pillar-description">24/7 service support, preventive maintenance scheduling, and rapid response to keep your fleet operational.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">💡</div>
+                    <h3 class="pillar-title">Innovation Partnership</h3>
+                    <p class="pillar-description">Early access to new technologies, electric vehicle integration, and cutting-edge fleet management solutions.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">💰</div>
+                    <h3 class="pillar-title">Cost Optimization</h3>
+                    <p class="pillar-description">Continuous analysis of total cost of ownership, lifecycle management, and strategic remarketing for maximum value.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎯</div>
+                    <h3 class="pillar-title">Customized Solutions</h3>
+                    <p class="pillar-description">Tailored fleet programs designed specifically for your industry, operational needs, and business objectives.</p>
+                </div>
+            </div>
+
+            <div class="success-metrics">
+                <h2 class="metrics-title">Partnership Success Metrics</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-number">98%</div>
+                        <div class="metric-label">Client Retention</div>
+                        <div class="metric-description">Long-term partnerships built on trust and results</div>
+                    </div>
+
+                    <div class="metric-item">
+                        <div class="metric-number">25%</div>
+                        <div class="metric-label">Average Cost Savings</div>
+                        <div class="metric-description">Through strategic fleet optimization and lifecycle management</div>
+                    </div>
+
+                    <div class="metric-item">
+                        <div class="metric-number">4hrs</div>
+                        <div class="metric-label">Average Response Time</div>
+                        <div class="metric-description">Rapid support for critical fleet issues</div>
+                    </div>
+
+                    <div class="metric-item">
+                        <div class="metric-number">50+</div>
+                        <div class="metric-label">Years Combined Experience</div>
+                        <div class="metric-description">Deep expertise in commercial fleet management</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lifecycle-support">
+                <h2 class="lifecycle-title">Complete Lifecycle Partnership</h2>
+                
+                <div class="lifecycle-phases">
+                    <div class="phase-card">
+                        <div class="phase-icon">🔍</div>
+                        <div class="phase-title">Fleet Assessment</div>
+                        <div class="phase-description">Comprehensive analysis of current operations and optimization opportunities</div>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-icon">📋</div>
+                        <div class="phase-title">Strategic Planning</div>
+                        <div class="phase-description">Custom fleet strategy aligned with business goals and growth plans</div>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-icon">🚛</div>
+                        <div class="phase-title">Vehicle Acquisition</div>
+                        <div class="phase-description">Procurement, financing, and delivery of optimized fleet vehicles</div>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-icon">⚙️</div>
+                        <div class="phase-title">Ongoing Management</div>
+                        <div class="phase-description">Daily operational support, maintenance, and performance monitoring</div>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-icon">📈</div>
+                        <div class="phase-title">Optimization</div>
+                        <div class="phase-description">Continuous improvement and adaptation to changing business needs</div>
+                    </div>
+
+                    <div class="phase-card">
+                        <div class="phase-icon">🔄</div>
+                        <div class="phase-title">Lifecycle Renewal</div>
+                        <div class="phase-description">Strategic replacement and remarketing for maximum value recovery</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-section">
+                <h2 class="testimonial-title">What Our Partners Say</h2>
+                <div class="testimonial-quote">
+                    "Our partnership with Ancira Winton Chevrolet has transformed our fleet operations. Their strategic approach and dedicated support have reduced our costs by 30% while improving vehicle uptime. They're not just a vendor - they're a true business partner."
+                </div>
+                <div class="testimonial-author">
+                    - Maria Rodriguez, Fleet Manager<br>
+                    Southwest Construction Group
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="tel:210-681-4900" class="cta-button">Start Partnership</a>
+                <a href="mailto:fleet@ancira.com" class="cta-button secondary">Schedule Consultation</a>
+                <p style="margin-top: 20px; color: #7f8c8d; font-size: 16px;">
+                    Fleet Partnership Manager: <strong style="color: #2c3e50;">(210) 681-4900</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Partnership</div>
+            <div class="footer-content">
+                <p>8535 Broadway, San Antonio, TX 78217</p>
+                <p>Strategic partnerships that drive long-term business success.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

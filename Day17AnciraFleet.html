@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Why Leading Companies Choose Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated trophy and star background */
+        .champion-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .champion-element {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            opacity: 0.04;
+            animation: champion-float 10s ease-in-out infinite;
+        }
+
+        .champion-element::before {
+            font-size: 45px;
+            position: absolute;
+        }
+
+        .champion-element:nth-child(1)::before {
+            content: '🏆';
+        }
+
+        .champion-element:nth-child(2)::before {
+            content: '⭐';
+        }
+
+        .champion-element:nth-child(3)::before {
+            content: '🥇';
+        }
+
+        .champion-element:nth-child(4)::before {
+            content: '🏆';
+        }
+
+        .champion-element:nth-child(5)::before {
+            content: '⭐';
+        }
+
+        .champion-element:nth-child(1) {
+            top: 15%;
+            left: 12%;
+            animation-delay: 0s;
+        }
+
+        .champion-element:nth-child(2) {
+            top: 35%;
+            right: 18%;
+            animation-delay: 2s;
+        }
+
+        .champion-element:nth-child(3) {
+            bottom: 40%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .champion-element:nth-child(4) {
+            bottom: 25%;
+            right: 15%;
+            animation-delay: 6s;
+        }
+
+        .champion-element:nth-child(5) {
+            top: 55%;
+            left: 45%;
+            animation-delay: 8s;
+        }
+
+        @keyframes champion-float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+                opacity: 0.04; 
+            }
+            25% { 
+                transform: translateY(-15px) rotate(10deg) scale(1.1); 
+                opacity: 0.06; 
+            }
+            50% { 
+                transform: translateY(-8px) rotate(-5deg) scale(0.9); 
+                opacity: 0.05; 
+            }
+            75% { 
+                transform: translateY(-20px) rotate(15deg) scale(1.05); 
+                opacity: 0.04; 
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Victory banner effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #27ae60, #3498db, #9b59b6, #e74c3c);
+            animation: victory-banner 4s linear infinite;
+        }
+
+        @keyframes victory-banner {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo-accent {
+            color: #2c3e50;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .advantage-highlight {
+            color: #f39c12;
+            font-size: 42px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Awards and Recognition */
+        .awards-section {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .awards-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 18s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .awards-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .award-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .award-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .award-year {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Competitive Advantages */
+        .advantages-section {
+            margin: 45px 0;
+        }
+
+        .advantages-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .advantage-card {
+            background: #fafafa;
+            padding: 35px;
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 4px solid #f39c12;
+            overflow: hidden;
+            opacity: 0;
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .advantage-card:nth-child(1) { animation-delay: 0.1s; }
+        .advantage-card:nth-child(2) { animation-delay: 0.2s; }
+        .advantage-card:nth-child(3) { animation-delay: 0.3s; }
+        .advantage-card:nth-child(4) { animation-delay: 0.4s; }
+        .advantage-card:nth-child(5) { animation-delay: 0.5s; }
+        .advantage-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(243, 156, 18, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .advantage-card:hover::before {
+            left: 100%;
+        }
+
+        .advantage-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .advantage-icon {
+            font-size: 36px;
+            margin-right: 15px;
+            color: #f39c12;
+        }
+
+        .advantage-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .advantage-description {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .advantage-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f39c12;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Comparison Chart */
+        .comparison-chart {
+            background: #2c3e50;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+        }
+
+        .chart-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .chart-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chart-table th {
+            background: #f39c12;
+            color: #ffffff;
+            padding: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .chart-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chart-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chart-table tr:hover {
+            background: rgba(243, 156, 18, 0.1);
+        }
+
+        .advantage-check {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .disadvantage-x {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .neutral-circle {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #f39c12;
+        }
+
+        .why-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .reasons-list {
+            list-style: none;
+            counter-reset: reason-counter;
+        }
+
+        .reason-item {
+            counter-increment: reason-counter;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            padding-left: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .reason-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .reason-item::before {
+            content: counter(reason-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background: #f39c12;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .reason-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .reason-description {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guarantee-section::before {
+            content: '🛡️';
+            font-size: 80px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.2;
+        }
+
+        .guarantee-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guarantee-subtitle {
+            font-size: 16px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guarantee-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guarantee-feature {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .guarantee-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 8px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(243, 156, 18, 0.1) 0%, transparent 70%);
+            animation: ctaPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .cta-title {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-subtitle {
+            font-size: 16px;
+            color: #ecf0f1;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            margin: 0 15px 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .cta-button.primary {
+            background: #f39c12;
+            color: #ffffff;
+            box-shadow: 0 5px 20px rgba(243, 156, 18, 0.3);
+        }
+
+        .cta-button.primary:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #f39c12;
+            border: 2px solid #f39c12;
+        }
+
+        .cta-button.secondary:hover {
+            background: #f39c12;
+            color: #ffffff;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #f39c12;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guarantee-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated champion background -->
+        <div class="champion-animation">
+            <div class="champion-element"></div>
+            <div class="champion-element"></div>
+            <div class="champion-element"></div>
+            <div class="champion-element"></div>
+            <div class="champion-element"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">San Antonio's #1 Fleet Choice</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">The <span class="advantage-highlight">#1 Choice</span> for San Antonio Fleets</h1>
+                <p class="hero-subtitle">More companies trust us with their fleet needs than any other dealer in South Texas. Here's why we consistently outperform the competition.</p>
+            </div>
+
+            <div class="awards-section">
+                <h2 class="awards-title">Industry Recognition & Awards</h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-icon">🏆</div>
+                        <div class="award-title">GM Dealer of Excellence</div>
+                        <div class="award-year">2024 & 2023</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">⭐</div>
+                        <div class="award-title">Fleet Dealer of the Year</div>
+                        <div class="award-year">South Texas 2024</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🥇</div>
+                        <div class="award-title">Customer Satisfaction Leader</div>
+                        <div class="award-year">98% Rating</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🛡️</div>
+                        <div class="award-title">BBB A+ Rating</div>
+                        <div class="award-year">15+ Years</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">📈</div>
+                        <div class="award-title">Top Volume Dealer</div>
+                        <div class="award-year">Texas Region</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🚛</div>
+                        <div class="award-title">Commercial Truck Leader</div>
+                        <div class="award-year">3 Years Running</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advantages-section">
+                <h2 class="advantages-title">Our Competitive Advantages</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-header">
+                            <div class="advantage-icon">🚛</div>
+                            <div class="advantage-title">Largest Fleet Inventory</div>
+                        </div>
+                        <div class="advantage-description">
+                            Over 500 fleet-ready vehicles on-site at all times. We stock more work trucks, vans, and commercial vehicles than any dealer in South Texas.
+                        </div>
+                        <div class="advantage-stats">
+                            <div class="stat">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Fleet Units</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Configurations</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">24hr</div>
+                                <div class="stat-label">Delivery</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-header">
+                            <div class="advantage-icon">🔧</div>
+                            <div class="advantage-title">Dedicated Fleet Service</div>
+                        </div>
+                        <div class="advantage-description">
+                            50+ service bays with fleet-priority scheduling, certified GM technicians, and 4-hour average service time. Our competitors can't match this capacity.
+                        </div>
+                        <div class="advantage-stats">
+                            <div class="stat">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Service Bays</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">4hrs</div>
+                                <div class="stat-label">Avg Service</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">First Visit Fix</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-header">
+                            <div class="advantage-icon">💰</div>
+                            <div class="advantage-title">Best Fleet Pricing</div>
+                        </div>
+                        <div class="advantage-description">
+                            Volume purchasing power with GM gives us the lowest fleet pricing in the market. We consistently beat competitor quotes by 8-15%.
+                        </div>
+                        <div class="advantage-stats">
+                            <div class="stat">
+                                <div class="stat-number">15%</div>
+                                <div class="stat-label">Lower Pricing</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">$2.5M</div>
+                                <div class="stat-label">Client Savings</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">1.9%</div>
+                                <div class="stat-label">Financing APR</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-header">
+                            <div class="advantage-icon">📱</div>
+                            <div class="advantage-title">Advanced Fleet Technology</div>
+                        </div>
+                        <div class="advantage-description">
+                            OnStar Commercial, fleet tracking, and management tools that competitors charge extra for. We include them at no additional cost.
+                        </div>
+                        <div class="advantage-stats">
+                            <div class="stat">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Monitoring</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Fleet Connected</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">$0</div>
+                                <div class="stat-label">Extra Cost</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-header">
+                            <div class="advantage-icon">⚡</div>
+                            <div class="advantage-title">Fastest Delivery Times</div>
+                        </div>
+                        <div class="advantage-description">
+                            Same-day delivery available, 24-hour standard delivery, and expedited fleet orders that get you working faster than anyone else.
+                        </div>
+                        <div class="advantage-stats">
+                            <div class="stat">
+                                <div class="stat-number">24hr</div>
+                                <div class="stat-label">Standard</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Same Day</div>
+                                <div class="stat-label">Available</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">7 Days</div>
+                                <div class="stat-label">Custom Orders</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advantage-card">
+                        <div class="advantage-header">
+                            <div class="advantage-icon">🏢</div>
+                            <div class="advantage-title">Local Family Business</div>
+                        </div>
+                        <div class="advantage-description">
+                            San Antonio-owned for over 30 years. We understand local business needs and provide personalized service that corporate dealers can't match.
+                        </div>
+                        <div class="advantage-stats">
+                            <div class="stat">
+                                <div class="stat-number">30+</div>
+                                <div class="stat-label">Years Local</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Family</div>
+                                <div class="stat-label">Owned</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">1,200+</div>
+                                <div class="stat-label">SA Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-chart">
+                <h2 class="chart-title">How We Compare to the Competition</h2>
+                <table class="chart-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Ancira Winton</th>
+                            <th>AutoNation</th>
+                            <th>Cavender</th>
+                            <th>Other Dealers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fleet Inventory (Units)</strong></td>
+                            <td>500+ <span class="advantage-check">✓</span></td>
+                            <td>150-200 <span class="neutral-circle">○</span></td>
+                            <td>100-150 <span class="disadvantage-x">✗</span></td>
+                            <td>50-100 <span class="disadvantage-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dedicated Fleet Service Bays</strong></td>
+                            <td>50+ <span class="advantage-check">✓</span></td>
+                            <td>15-20 <span class="neutral-circle">○</span></td>
+                            <td>10-15 <span class="disadvantage-x">✗</span></td>
+                            <td>5-10 <span class="disadvantage-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Same-Day Delivery</strong></td>
+                            <td>Available <span class="advantage-check">✓</span></td>
+                            <td>Limited <span class="neutral-circle">○</span></td>
+                            <td>No <span class="disadvantage-x">✗</span></td>
+                            <td>No <span class="disadvantage-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>OnStar Commercial Included</strong></td>
+                            <td>Free <span class="advantage-check">✓</span></td>
+                            <td>Extra Cost <span class="disadvantage-x">✗</span></td>
+                            <td>Extra Cost <span class="disadvantage-x">✗</span></td>
+                            <td>Not Available <span class="disadvantage-x">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Local Family Ownership</strong></td>
+                            <td>30+ Years <span class="advantage-check">✓</span></td>
+                            <td>Corporate <span class="disadvantage-x">✗</span></td>
+                            <td>Corporate <span class="disadvantage-x">✗</span></td>
+                            <td>Varies <span class="neutral-circle">○</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="why-choose-us">
+                <h2 class="why-title">Top 8 Reasons Companies Choose Ancira Winton</h2>
+                <div class="reasons-list">
+                    <div class="reason-item">
+                        <div class="reason-title">Unmatched Fleet Expertise</div>
+                        <div class="reason-description">Our fleet specialists average 12+ years in commercial vehicle sales and understand your business needs.</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-title">Guaranteed Best Pricing</div>
+                        <div class="reason-description">We'll beat any competitor's written quote by $500 per vehicle or your money back.</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-title">Priority Service Guarantee</div>
+                        <div class="reason-description">Fleet customers get priority scheduling and dedicated service lanes - no waiting behind retail customers.</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-title">Local Decision Making</div>
+                        <div class="reason-description">Family-owned business means faster approvals and more flexible terms than corporate dealerships.</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-title">Complete Fleet Solutions</div>
+                        <div class="reason-description">From vehicle selection to financing, upfitting, and ongoing service - we handle everything.</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-title">Proven Track Record</div>
+                        <div class="reason-description">1,200+ satisfied fleet customers across San Antonio and South Texas trust us with their operations.</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-title">Advanced Technology Platform</div>
+                        <div class="reason-description">OnStar Commercial, fleet management tools, and real-time monitoring included at no extra cost.</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-title">Fastest Delivery in Texas</div>
+                        <div class="reason-description">Same-day delivery available, 24-hour standard delivery gets your fleet working immediately.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-section">
+                <h2 class="guarantee-title">Our Fleet Performance Guarantee</h2>
+                <p class="guarantee-subtitle">We're so confident in our fleet solutions, we guarantee your satisfaction</p>
+                
+                <div class="guarantee-features">
+                    <div class="guarantee-feature">
+                        <div class="guarantee-icon">💰</div>
+                        <div class="guarantee-text">Beat any competitor's price by $500 per vehicle</div>
+                    </div>
+                    <div class="guarantee-feature">
+                        <div class="guarantee-icon">⏰</div>
+                        <div class="guarantee-text">Service completed within promised timeframe</div>
+                    </div>
+                    <div class="guarantee-feature">
+                        <div class="guarantee-icon">📞</div>
+                        <div class="guarantee-text">24-hour response to all fleet emergencies</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-title">Experience the Ancira Advantage</div>
+                <div class="cta-subtitle">Join 1,200+ companies who chose San Antonio's #1 fleet dealer</div>
+                
+                <a href="tel:210-231-4350" class="cta-button primary">Call Fleet Experts: (210) 231-4350</a>
+                <a href="https://www.ancirachev.com/fleet-advantage" class="cta-button secondary">See Full Comparison</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet - San Antonio's Fleet Leader</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Fleet Advantage Team: Mon-Fri 7:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 The Right Fleet Solution at the Right Time - Ancira Winton</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated puzzle pieces background */
+        .solution-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .puzzle-piece {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            opacity: 0.03;
+            animation: piece-float 15s ease-in-out infinite;
+        }
+
+        .puzzle-piece::before {
+            font-size: 35px;
+            position: absolute;
+        }
+
+        .puzzle-piece:nth-child(1)::before {
+            content: '🧩';
+        }
+
+        .puzzle-piece:nth-child(2)::before {
+            content: '🎯';
+        }
+
+        .puzzle-piece:nth-child(3)::before {
+            content: '✨';
+        }
+
+        .puzzle-piece:nth-child(4)::before {
+            content: '🧩';
+        }
+
+        .puzzle-piece:nth-child(5)::before {
+            content: '💡';
+        }
+
+        .puzzle-piece:nth-child(1) {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .puzzle-piece:nth-child(2) {
+            top: 45%;
+            right: 18%;
+            animation-delay: 3s;
+        }
+
+        .puzzle-piece:nth-child(3) {
+            bottom: 30%;
+            left: 25%;
+            animation-delay: 6s;
+        }
+
+        .puzzle-piece:nth-child(4) {
+            bottom: 15%;
+            right: 20%;
+            animation-delay: 9s;
+        }
+
+        .puzzle-piece:nth-child(5) {
+            top: 65%;
+            left: 50%;
+            animation-delay: 12s;
+        }
+
+        @keyframes piece-float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0.03; 
+            }
+            25% { 
+                transform: translateY(-12px) rotate(5deg); 
+                opacity: 0.05; 
+            }
+            50% { 
+                transform: translateY(-6px) rotate(-3deg); 
+                opacity: 0.04; 
+            }
+            75% { 
+                transform: translateY(-18px) rotate(8deg); 
+                opacity: 0.03; 
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6c5ce7 0%, #5a4fcf 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Solution connection effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a29bfe, #74b9ff, #00cec9, #55a3ff, transparent);
+            animation: solution-flow 4s linear infinite;
+        }
+
+        @keyframes solution-flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo-accent {
+            color: #74b9ff;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .solution-highlight {
+            color: #6c5ce7;
+            font-size: 42px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Fleet Challenges Section */
+        .challenges-section {
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #6c5ce7;
+        }
+
+        .challenges-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .challenge-item {
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 3px solid #e74c3c;
+        }
+
+        .challenge-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .challenge-icon {
+            font-size: 24px;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .challenge-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .challenge-desc {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            background: linear-gradient(135deg, #6c5ce7 0%, #5a4fcf 100%);
+            padding: 45px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solutions-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .solutions-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .solutions-subtitle {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .solution-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-top: 3px solid #00cec9;
+        }
+
+        .solution-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .solution-icon {
+            font-size: 32px;
+            color: #00cec9;
+            margin-bottom: 15px;
+        }
+
+        .solution-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .solution-desc {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Perfect Timing Section */
+        .timing-section {
+            margin: 45px 0;
+        }
+
+        .timing-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .timing-scenarios {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .timing-scenario {
+            padding: 25px;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid #6c5ce7;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .timing-scenario:nth-child(1) { animation-delay: 0.1s; }
+        .timing-scenario:nth-child(2) { animation-delay: 0.3s; }
+        .timing-scenario:nth-child(3) { animation-delay: 0.5s; }
+        .timing-scenario:nth-child(4) { animation-delay: 0.7s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timing-scenario:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .scenario-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .scenario-icon {
+            font-size: 28px;
+            margin-right: 15px;
+        }
+
+        .scenario-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .scenario-desc {
+            font-size: 15px;
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+
+        /* Decision Framework */
+        .decision-framework {
+            background: #2c3e50;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+        }
+
+        .framework-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .framework-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .framework-step {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #6c5ce7;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: linear-gradient(135deg, #00cec9 0%, #00b894 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .value-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .value-subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .value-points {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .value-point {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .value-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .value-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Next Steps */
+        .next-steps {
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            text-align: center;
+        }
+
+        .steps-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        .steps-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .step-option {
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .step-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-icon {
+            font-size: 36px;
+            color: #6c5ce7;
+            margin-bottom: 15px;
+        }
+
+        .option-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .option-desc {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .option-button {
+            background: #6c5ce7;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .option-button:hover {
+            background: #5a4fcf;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6c5ce7;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .challenges-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .framework-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .value-points {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated solution elements -->
+        <div class="solution-animation">
+            <div class="puzzle-piece"></div>
+            <div class="puzzle-piece"></div>
+            <div class="puzzle-piece"></div>
+            <div class="puzzle-piece"></div>
+            <div class="puzzle-piece"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">The Right Fleet Solution at the Right Time</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Every Fleet Challenge Has a <span class="solution-highlight">Solution</span></h1>
+                <p class="hero-subtitle">Whether you're facing growth, maintenance issues, or cost pressures, we have the experience and solutions to help your fleet operation succeed.</p>
+            </div>
+
+            <div class="challenges-section">
+                <h2 class="challenges-title">Common Fleet Challenges We Solve</h2>
+                <div class="challenges-grid">
+                    <div class="challenge-item">
+                        <div class="challenge-icon">📈</div>
+                        <div class="challenge-title">Rapid Business Growth</div>
+                        <div class="challenge-desc">Your business is expanding faster than your fleet can keep up, limiting your ability to serve new customers.</div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">💰</div>
+                        <div class="challenge-title">Rising Operating Costs</div>
+                        <div class="challenge-desc">Fuel, maintenance, and repair costs are eating into your profits while older vehicles become less reliable.</div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">⏰</div>
+                        <div class="challenge-title">Unexpected Downtime</div>
+                        <div class="challenge-desc">Vehicle breakdowns are disrupting your operations and disappointing customers who depend on you.</div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">🔧</div>
+                        <div class="challenge-title">Maintenance Headaches</div>
+                        <div class="challenge-desc">Managing service schedules across multiple vehicles while keeping your business running smoothly.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solutions-section">
+                <h2 class="solutions-title">How We Solve Your Fleet Challenges</h2>
+                <p class="solutions-subtitle">Comprehensive solutions designed around your business needs</p>
+                
+                <div class="solutions-grid">
+                    <div class="solution-item">
+                        <div class="solution-icon">🚛</div>
+                        <div class="solution-title">Scalable Fleet Solutions</div>
+                        <div class="solution-desc">From single vehicle additions to complete fleet overhauls, we scale with your business growth.</div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">💡</div>
+                        <div class="solution-title">Cost Optimization</div>
+                        <div class="solution-desc">Fuel-efficient vehicles, smart financing, and preventive maintenance programs that reduce total ownership costs.</div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">⚡</div>
+                        <div class="solution-title">Reliability Guarantee</div>
+                        <div class="solution-desc">Priority service, loaner vehicles, and preventive maintenance to minimize unexpected downtime.</div>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">🛠️</div>
+                        <div class="solution-title">Complete Service Management</div>
+                        <div class="solution-desc">We handle all maintenance scheduling, service coordination, and fleet management details for you.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timing-section">
+                <h2 class="timing-title">The Right Solution for Your Situation</h2>
+                <div class="timing-scenarios">
+                    <div class="timing-scenario">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">🌱</div>
+                            <div class="scenario-title">Growing Business</div>
+                        </div>
+                        <div class="scenario-desc">Your customer base is expanding and you need reliable vehicles to handle increased demand. We provide flexible financing and quick delivery to match your growth pace.</div>
+                    </div>
+                    
+                    <div class="timing-scenario">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">🔄</div>
+                            <div class="scenario-title">Fleet Replacement</div>
+                        </div>
+                        <div class="scenario-desc">Your current vehicles are costing more to maintain than they're worth. We help you transition to newer, more efficient vehicles with minimal business disruption.</div>
+                    </div>
+                    
+                    <div class="timing-scenario">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">📊</div>
+                            <div class="scenario-title">Cost Management</div>
+                        </div>
+                        <div class="scenario-desc">Rising fuel and maintenance costs are impacting your bottom line. Our efficiency analysis and vehicle recommendations can significantly reduce operating expenses.</div>
+                    </div>
+                    
+                    <div class="timing-scenario">
+                        <div class="scenario-header">
+                            <div class="scenario-icon">🎯</div>
+                            <div class="scenario-title">Competitive Advantage</div>
+                        </div>
+                        <div class="scenario-desc">You want to differentiate your business with newer, more professional vehicles and advanced fleet technology that impresses customers.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="decision-framework">
+                <h2 class="framework-title">Your Fleet Decision Framework</h2>
+                <div class="framework-steps">
+                    <div class="framework-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Assess</div>
+                        <div class="step-desc">Evaluate your current fleet costs, efficiency, and business requirements</div>
+                    </div>
+                    <div class="framework-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Explore</div>
+                        <div class="step-desc">Review vehicle options, financing alternatives, and service solutions</div>
+                    </div>
+                    <div class="framework-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Decide</div>
+                        <div class="step-desc">Choose the solution that best fits your timeline, budget, and business goals</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-prop">
+                <h2 class="value-title">Why Businesses Choose Our Fleet Solutions</h2>
+                <p class="value-subtitle">The advantages that make the difference for your operation</p>
+                
+                <div class="value-points">
+                    <div class="value-point">
+                        <div class="value-icon">🎯</div>
+                        <div class="value-text">Customized solutions tailored to your specific industry and business needs</div>
+                    </div>
+                    <div class="value-point">
+                        <div class="value-icon">⚡</div>
+                        <div class="value-text">Fast implementation with minimal disruption to your daily operations</div>
+                    </div>
+                    <div class="value-point">
+                        <div class="value-icon">🛡️</div>
+                        <div class="value-text">Comprehensive support including service, maintenance, and fleet management</div>
+                    </div>
+                    <div class="value-point">
+                        <div class="value-icon">💰</div>
+                        <div class="value-text">Transparent pricing with no hidden costs or unexpected surprises</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-steps">
+                <h2 class="steps-title">Ready to Explore Your Options?</h2>
+                <div class="steps-options">
+                    <div class="step-option">
+                        <div class="option-icon">📞</div>
+                        <div class="option-title">Quick Consultation</div>
+                        <div class="option-desc">15-minute call to discuss your current situation and explore potential solutions</div>
+                        <a href="tel:210-231-4350" class="option-button">Call (210) 231-4350</a>
+                    </div>
+                    <div class="step-option">
+                        <div class="option-icon">📊</div>
+                        <div class="option-title">Fleet Analysis</div>
+                        <div class="option-desc">Comprehensive review of your current fleet costs and efficiency opportunities</div>
+                        <a href="https://www.ancirachev.com/fleet-analysis" class="option-button">Request Analysis</a>
+                    </div>
+                    <div class="step-option">
+                        <div class="option-icon">🏢</div>
+                        <div class="option-title">Facility Visit</div>
+                        <div class="option-desc">Tour our service center and see our fleet inventory and capabilities firsthand</div>
+                        <a href="https://www.ancirachev.com/schedule-visit" class="option-button">Schedule Visit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Solutions</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Fleet Solutions: Mon-Fri 7:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

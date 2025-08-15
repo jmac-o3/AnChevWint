@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 Cut Fleet Costs by 30% - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated dollar signs background */
+        .money-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .dollar-sign {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.03;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .dollar-sign::before {
+            content: '$';
+            font-size: 40px;
+            font-weight: bold;
+            color: #27ae60;
+            position: absolute;
+        }
+
+        .dollar-sign:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .dollar-sign:nth-child(2) {
+            top: 30%;
+            right: 20%;
+            animation-delay: 3s;
+        }
+
+        .dollar-sign:nth-child(3) {
+            bottom: 40%;
+            left: 25%;
+            animation-delay: 6s;
+        }
+
+        .dollar-sign:nth-child(4) {
+            bottom: 15%;
+            right: 15%;
+            animation-delay: 9s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(5deg); }
+            50% { transform: translateY(-5px) rotate(-3deg); }
+            75% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Savings counter effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f1c40f, transparent);
+            animation: savings-scan 4s linear infinite;
+        }
+
+        @keyframes savings-scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo-accent {
+            color: #f1c40f;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .savings-highlight {
+            color: #27ae60;
+            font-size: 42px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Cost Savings Stats */
+        .savings-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 45px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .savings-stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .savings-card {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            animation: popIn 0.5s ease-out forwards;
+        }
+
+        .savings-card:nth-child(1) { animation-delay: 0.1s; }
+        .savings-card:nth-child(2) { animation-delay: 0.3s; }
+        .savings-card:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .savings-number {
+            font-size: 38px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .savings-label {
+            font-size: 13px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        /* Cost Breakdown */
+        .cost-breakdown {
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        .breakdown-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .cost-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .cost-item:hover {
+            transform: translateX(5px);
+        }
+
+        .cost-description {
+            font-size: 14px;
+            color: #5a6c7d;
+            font-weight: 500;
+        }
+
+        .cost-savings {
+            font-size: 16px;
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        /* Calculation Tool */
+        .calculator-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .calculator-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .calculator-subtitle {
+            font-size: 16px;
+            color: #ecf0f1;
+            margin-bottom: 30px;
+        }
+
+        .fleet-size-input {
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #c9a961;
+        }
+
+        .size-input {
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .potential-savings {
+            font-size: 24px;
+            color: #f1c40f;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        /* Testimonial with ROI focus */
+        .roi-testimonial {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 35px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #27ae60;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            font-style: italic;
+            color: #5a6c7d;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .roi-highlight {
+            background: #27ae60;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .roi-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .roi-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cta-subtitle {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            margin: 0 10px 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button.primary {
+            background: #27ae60;
+            color: #ffffff;
+        }
+
+        .cta-button.primary:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+        }
+
+        .cta-button.secondary:hover {
+            background: #2c3e50;
+            color: #ffffff;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #c9a961;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .savings-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .cost-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated money background -->
+        <div class="money-animation">
+            <div class="dollar-sign"></div>
+            <div class="dollar-sign"></div>
+            <div class="dollar-sign"></div>
+            <div class="dollar-sign"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">Fleet Cost Optimization Specialists</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Reduce Your Fleet Operating Costs by <span class="savings-highlight">30%</span></h1>
+                <p class="hero-subtitle">Smart fleet management starts with the right vehicles, maintenance programs, and financial strategies. Let us show you exactly how much you can save.</p>
+            </div>
+
+            <div class="savings-stats">
+                <div class="savings-card">
+                    <div class="savings-number">$8,400</div>
+                    <div class="savings-label">Annual Savings Per Vehicle</div>
+                </div>
+                <div class="savings-card">
+                    <div class="savings-number">25%</div>
+                    <div class="savings-label">Fuel Cost Reduction</div>
+                </div>
+                <div class="savings-card">
+                    <div class="savings-number">40%</div>
+                    <div class="savings-label">Lower Maintenance</div>
+                </div>
+            </div>
+
+            <div class="cost-breakdown">
+                <h2 class="breakdown-title">Where Your Fleet Saves Money</h2>
+                <div class="cost-items">
+                    <div class="cost-item">
+                        <span class="cost-description">Fuel Efficiency Improvement</span>
+                        <span class="cost-savings">$2,800/year</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-description">Reduced Maintenance Costs</span>
+                        <span class="cost-savings">$3,200/year</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-description">Lower Insurance Premiums</span>
+                        <span class="cost-savings">$1,200/year</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-description">Improved Resale Value</span>
+                        <span class="cost-savings">$1,200/year</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator-section">
+                <h2 class="calculator-title">Calculate Your Potential Savings</h2>
+                <p class="calculator-subtitle">See how much your fleet could save annually</p>
+                
+                <div class="fleet-size-input">
+                    <label class="input-label">Number of Vehicles in Your Fleet:</label>
+                    <input type="number" class="size-input" value="10" min="1" max="500" id="fleetSize">
+                </div>
+                
+                <div class="potential-savings" id="savingsResult">
+                    Potential Annual Savings: $84,000
+                </div>
+            </div>
+
+            <div class="roi-testimonial">
+                <p class="testimonial-text">
+                    "Switching our 25-vehicle delivery fleet to Ancira's Chevrolet program saved us $186,000 in the first year alone. The fuel savings and reduced maintenance costs were immediate and substantial."
+                </p>
+                <p class="testimonial-author">- Michael Rodriguez, Fleet Manager, Express Logistics</p>
+                
+                <div class="roi-highlight">
+                    <div class="roi-number">18 Months</div>
+                    <div class="roi-label">Complete ROI Payback</div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-title">Get Your Custom Fleet Savings Analysis</div>
+                <div class="cta-subtitle">Free consultation and detailed cost breakdown for your specific fleet</div>
+                
+                <a href="tel:210-231-4350" class="cta-button primary">Call Now: (210) 231-4350</a>
+                <a href="https://www.ancirachev.com/fleet-analysis" class="cta-button secondary">Get Free Analysis</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Solutions</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Fleet Specialists Available: Mon-Fri 7:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple calculator functionality
+        document.getElementById('fleetSize').addEventListener('input', function() {
+            const fleetSize = parseInt(this.value) || 0;
+            const savingsPerVehicle = 8400;
+            const totalSavings = fleetSize * savingsPerVehicle;
+            document.getElementById('savingsResult').textContent = 
+                `Potential Annual Savings: $${totalSavings.toLocaleString()}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet Incentives & Programs - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0a0f1c 0%, #1a2332 50%, #0f1419 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+            box-shadow: 
+                0 0 60px rgba(34, 139, 34, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            animation: containerGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes containerGlow {
+            0% { box-shadow: 0 0 60px rgba(34, 139, 34, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+            100% { box-shadow: 0 0 80px rgba(34, 139, 34, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+        }
+
+        .money-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .money-particle {
+            position: absolute;
+            font-size: 24px;
+            color: #32cd32;
+            animation: floatMoney 8s linear infinite;
+            opacity: 0.7;
+            text-shadow: 0 0 10px rgba(50, 205, 50, 0.8);
+        }
+
+        @keyframes floatMoney {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a2332 0%, #34495e 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(34, 139, 34, 0.4), transparent);
+            animation: incentiveSweep 3s ease-in-out infinite;
+        }
+
+        @keyframes incentiveSweep {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #daa520;
+            margin-bottom: 10px;
+            text-shadow: 
+                0 0 20px rgba(218, 165, 32, 0.6),
+                0 0 40px rgba(218, 165, 32, 0.4);
+            animation: logoPrestige 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoPrestige {
+            0% { text-shadow: 0 0 20px rgba(218, 165, 32, 0.6), 0 0 40px rgba(218, 165, 32, 0.4); }
+            100% { text-shadow: 0 0 30px rgba(218, 165, 32, 0.8), 0 0 60px rgba(218, 165, 32, 0.6); }
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #ecf0f1;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #32cd32;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(50, 205, 50, 0.5);
+            animation: heroEntrance 2s ease-out;
+        }
+
+        @keyframes heroEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+                filter: blur(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #bdc3c7;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .savings-banner {
+            background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+            color: #1a2332;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .savings-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: savingsShine 3s ease-in-out infinite;
+        }
+
+        @keyframes savingsShine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: -100%; }
+        }
+
+        .savings-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .savings-text {
+            font-size: 18px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .incentives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .incentive-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 30px 25px;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 2px solid rgba(34, 139, 34, 0.3);
+            overflow: hidden;
+        }
+
+        .incentive-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(34, 139, 34, 0.1), rgba(50, 205, 50, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .incentive-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(34, 139, 34, 0.4);
+        }
+
+        .incentive-card:hover::before {
+            opacity: 1;
+        }
+
+        .incentive-header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .incentive-amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: #32cd32;
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(50, 205, 50, 0.6);
+        }
+
+        .incentive-type {
+            font-size: 16px;
+            color: #bdc3c7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .incentive-details {
+            list-style: none;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .incentive-details li {
+            margin-bottom: 12px;
+            color: #ecf0f1;
+            font-size: 14px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .incentive-details li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #32cd32;
+            font-weight: bold;
+        }
+
+        .special-programs {
+            background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-programs::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(34, 139, 34, 0.1) 90deg, transparent 180deg);
+            animation: rotate 10s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .programs-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #daa520;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .program-card {
+            background: rgba(34, 139, 34, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(34, 139, 34, 0.3);
+        }
+
+        .program-card:hover {
+            transform: scale(1.05);
+            background: rgba(34, 139, 34, 0.2);
+        }
+
+        .program-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            animation: iconBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .program-title {
+            font-weight: 600;
+            color: #32cd32;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .program-description {
+            color: #bdc3c7;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .fleet-requirements {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .requirements-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #daa520;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .requirements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: rgba(34, 139, 34, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-item:hover {
+            background: rgba(34, 139, 34, 0.1);
+            transform: translateX(5px);
+        }
+
+        .requirement-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            color: #32cd32;
+        }
+
+        .requirement-text {
+            color: #ecf0f1;
+            font-size: 14px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+            color: #1a2332;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 
+                0 10px 30px rgba(34, 139, 34, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            margin: 0 10px 10px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(34, 139, 34, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .footer {
+            background: #1a2332;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(34, 139, 34, 0.3);
+        }
+
+        .footer-content {
+            color: #7f8c8d;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-logo {
+            color: #daa520;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .incentives-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .cta-button {
+                margin: 5px 0;
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="money-rain">
+            <div class="money-particle" style="left: 10%; animation-delay: 0s;">💰</div>
+            <div class="money-particle" style="left: 25%; animation-delay: 1s;">💵</div>
+            <div class="money-particle" style="left: 40%; animation-delay: 2s;">💰</div>
+            <div class="money-particle" style="left: 60%; animation-delay: 3s;">💵</div>
+            <div class="money-particle" style="left: 80%; animation-delay: 4s;">💰</div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA WINTON CHEVROLET</div>
+            <div class="tagline">2023 Chevrolet Dealer of the Year | Fleet Incentive Specialists</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Fleet Incentives & Programs</h1>
+                <p class="hero-subtitle">Maximize your savings. Stack incentives.<br>Exclusive fleet programs designed for your business success.</p>
+            </div>
+
+            <div class="savings-banner">
+                <h2 class="savings-title">Save Up to $7,500 Per Vehicle</h2>
+                <p class="savings-text">Combine fleet discounts, federal tax credits, and manufacturer incentives</p>
+            </div>
+
+            <div class="incentives-grid">
+                <div class="incentive-card">
+                    <div class="incentive-header">
+                        <div class="incentive-amount">$7,500</div>
+                        <div class="incentive-type">Federal EV Tax Credit</div>
+                    </div>
+                    <ul class="incentive-details">
+                        <li>Available on Silverado EV & Equinox EV</li>
+                        <li>Point-of-sale application available</li>
+                        <li>Expires September 30, 2025</li>
+                        <li>Stackable with other incentives</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="incentive-header">
+                        <div class="incentive-amount">$3,500</div>
+                        <div class="incentive-type">Fleet Volume Discount</div>
+                    </div>
+                    <ul class="incentive-details">
+                        <li>5+ vehicle orders qualify</li>
+                        <li>Additional discounts for 10+ units</li>
+                        <li>Available on most 2025 models</li>
+                        <li>Stackable with manufacturer rebates</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="incentive-header">
+                        <div class="incentive-amount">$1,250</div>
+                        <div class="incentive-type">Costco Fleet Incentive</div>
+                    </div>
+                    <ul class="incentive-details">
+                        <li>Costco Executive member rate</li>
+                        <li>$1,000 for Non-Executive members</li>
+                        <li>Purchase or lease eligible</li>
+                        <li>Expires September 30, 2025</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="incentive-header">
+                        <div class="incentive-amount">$1,000</div>
+                        <div class="incentive-type">Customer Cash</div>
+                    </div>
+                    <ul class="incentive-details">
+                        <li>Available on select 2025 models</li>
+                        <li>2025 Blazer customer cash</li>
+                        <li>Immediate rebate at purchase</li>
+                        <li>No financing restrictions</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="incentive-header">
+                        <div class="incentive-amount">$500</div>
+                        <div class="incentive-type">Silverado HD Rebate</div>
+                    </div>
+                    <ul class="incentive-details">
+                        <li>2025 Silverado 2500HD & 3500HD</li>
+                        <li>LT trim and above eligible</li>
+                        <li>Commercial use qualification</li>
+                        <li>Regional offer availability</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="incentive-header">
+                        <div class="incentive-amount">0%</div>
+                        <div class="incentive-type">APR Financing</div>
+                    </div>
+                    <ul class="incentive-details">
+                        <li>36 months on Silverado models</li>
+                        <li>60 months on Silverado EV</li>
+                        <li>Well-qualified buyers</li>
+                        <li>Fleet quantities eligible</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="special-programs">
+                <h2 class="programs-title">Special Fleet Programs</h2>
+                
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">🎖️</div>
+                        <div class="program-title">Military Appreciation</div>
+                        <div class="program-description">Active duty, reserves, veterans, and retirees eligible for special fleet pricing</div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🚒</div>
+                        <div class="program-title">First Responder</div>
+                        <div class="program-description">Police, firefighters, EMTs, and 911 dispatchers qualify for exclusive discounts</div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🎓</div>
+                        <div class="program-title">Educator Appreciation</div>
+                        <div class="program-description">Public and private school employees, college faculty eligible for special offers</div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🏪</div>
+                        <div class="program-title">Costco Fleet Program</div>
+                        <div class="program-description">Executive and regular members receive additional incentives on fleet purchases</div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">🔧</div>
+                        <div class="program-title">GM Supplier Discount</div>
+                        <div class="program-description">Eligible supplier company employees qualify for enhanced fleet pricing</div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">💼</div>
+                        <div class="program-title">Business Elite</div>
+                        <div class="program-description">Certified Business Elite dealer with enhanced fleet services and support</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fleet-requirements">
+                <h2 class="requirements-title">Fleet Qualification Requirements</h2>
+                
+                <div class="requirements-list">
+                    <div class="requirement-item">
+                        <div class="requirement-icon">📊</div>
+                        <div class="requirement-text">5+ vehicles for volume discounts</div>
+                    </div>
+
+                    <div class="requirement-item">
+                        <div class="requirement-icon">🏢</div>
+                        <div class="requirement-text">Business use verification required</div>
+                    </div>
+
+                    <div class="requirement-item">
+                        <div class="requirement-icon">📋</div>
+                        <div class="requirement-text">Fleet registration and licensing</div>
+                    </div>
+
+                    <div class="requirement-item">
+                        <div class="requirement-icon">💳</div>
+                        <div class="requirement-text">Commercial financing available</div>
+                    </div>
+
+                    <div class="requirement-item">
+                        <div class="requirement-icon">📅</div>
+                        <div class="requirement-text">12-month minimum service commitment</div>
+                    </div>
+
+                    <div class="requirement-item">
+                        <div class="requirement-icon">🇺🇸</div>
+                        <div class="requirement-text">US business operations required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="tel:210-807-4900" class="cta-button">Get Incentive Quote</a>
+                <a href="mailto:fleetincentives@ancira.com" class="cta-button">Apply Now</a>
+                <p style="margin-top: 20px; color: #bdc3c7; font-size: 16px;">
+                    Fleet Incentives Specialist: <strong style="color: #32cd32;">(210) 807-4900</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">Ancira Winton Chevrolet Fleet Incentives</div>
+                <p>8535 Broadway, San Antonio, TX 78217</p>
+                <p>Maximize your fleet savings with our comprehensive incentive programs.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add dynamic floating money particles
+        function createMoneyParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'money-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            
+            const symbols = ['💰', '💵', '💲', '🏦', '💳'];
+            particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            
+            document.querySelector('.money-rain').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Create new particles periodically
+        setInterval(createMoneyParticle, 2000);
+    </script>
+</body>
+</html>

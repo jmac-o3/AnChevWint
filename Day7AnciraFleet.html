@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>Your Fleet's Concierge Service Experience</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #141e30 0%, #243b55 50%, #141e30 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .aurora-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .aurora {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(52,152,219,0.3) 0%, transparent 70%);
+            animation: auroraMove 20s ease-in-out infinite;
+        }
+        
+        .aurora:nth-child(2) {
+            background: radial-gradient(ellipse at center, rgba(46,204,113,0.3) 0%, transparent 70%);
+            animation-delay: -5s;
+        }
+        
+        .aurora:nth-child(3) {
+            background: radial-gradient(ellipse at center, rgba(155,89,182,0.3) 0%, transparent 70%);
+            animation-delay: -10s;
+        }
+        
+        @keyframes auroraMove {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            }
+            33% {
+                transform: translate(-30%, -60%) rotate(120deg) scale(1.2);
+            }
+            66% {
+                transform: translate(-70%, -40%) rotate(240deg) scale(0.8);
+            }
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 50px 150px rgba(0,0,0,0.6);
+            animation: containerRise 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        @keyframes containerRise {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 50%, #3498db 100%);
+            padding: 80px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,30 50,50 T100,50" stroke="rgba(255,255,255,0.2)" stroke-width="0.5" fill="none"/></svg>');
+            background-size: 100px 50px;
+            animation: waveMove 10s linear infinite;
+        }
+        
+        @keyframes waveMove {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100px);
+            }
+        }
+        
+        .service-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.95);
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: badgeShine 3s ease-in-out infinite;
+        }
+        
+        @keyframes badgeShine {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            50% {
+                box-shadow: 0 15px 40px rgba(255,255,255,0.4);
+            }
+        }
+        
+        h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            animation: titleFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes titleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .service-grid {
+            display: grid;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: cardReveal 1s ease-out backwards;
+        }
+        
+        .service-card:nth-child(1) { animation-delay: 0.2s; }
+        .service-card:nth-child(2) { animation-delay: 0.4s; }
+        .service-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes cardReveal {
+            from {
+                opacity: 0;
+                transform: translateX(-50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #3498db, transparent);
+            animation: scanLine 3s infinite;
+        }
+        
+        @keyframes scanLine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(52,152,219,0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(52,152,219,0);
+            }
+        }
+        
+        .service-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #5a6c7d;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: featureAppear 0.5s ease-out forwards;
+        }
+        
+        .service-features li:nth-child(1) { animation-delay: 0.1s; }
+        .service-features li:nth-child(2) { animation-delay: 0.2s; }
+        .service-features li:nth-child(3) { animation-delay: 0.3s; }
+        .service-features li:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes featureAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .service-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+            font-size: 20px;
+            animation: arrowSlide 0.6s ease-out;
+        }
+        
+        @keyframes arrowSlide {
+            from {
+                transform: translateX(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .service-features li:hover {
+            color: #2c3e50;
+            transform: translateX(5px);
+        }
+        
+        .guarantee-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: guaranteeGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes guaranteeGlow {
+            0%, 100% {
+                box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            }
+            50% {
+                box-shadow: 0 25px 60px rgba(52,152,219,0.4);
+            }
+        }
+        
+        .guarantee-section::before {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 200px;
+            color: rgba(46,204,113,0.1);
+            animation: checkRotate 10s linear infinite;
+        }
+        
+        @keyframes checkRotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .metric-item {
+            text-align: center;
+            animation: metricBounce 4s ease-in-out infinite;
+        }
+        
+        .metric-item:nth-child(1) { animation-delay: 0s; }
+        .metric-item:nth-child(2) { animation-delay: 0.5s; }
+        .metric-item:nth-child(3) { animation-delay: 1s; }
+        
+        @keyframes metricBounce {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.05);
+            }
+        }
+        
+        .metric-number {
+            font-size: 56px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(52,152,219,0.3);
+            animation: numberShine 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes numberShine {
+            from {
+                filter: brightness(1);
+            }
+            to {
+                filter: brightness(1.3);
+            }
+        }
+        
+        .metric-label {
+            color: #5a6c7d;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+        
+        .tech-showcase {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(52,152,219,0.1), transparent);
+            animation: techRotate 15s linear infinite;
+        }
+        
+        @keyframes techRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .app-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .app-feature {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            animation: appFeatureSlide 0.6s ease-out backwards;
+        }
+        
+        .app-feature:nth-child(1) { animation-delay: 0.1s; }
+        .app-feature:nth-child(2) { animation-delay: 0.2s; }
+        .app-feature:nth-child(3) { animation-delay: 0.3s; }
+        .app-feature:nth-child(4) { animation-delay: 0.4s; }
+        .app-feature:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes appFeatureSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .app-feature:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(52,152,219,0.2);
+        }
+        
+        .app-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            animation: iconSpin 4s linear infinite;
+        }
+        
+        @keyframes iconSpin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .cta-premium {
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 50%, #3498db 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            animation: ctaBreath 3s ease-in-out infinite;
+        }
+        
+        @keyframes ctaBreath {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+        
+        .cta-premium::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: ctaShimmer 3s infinite;
+        }
+        
+        @keyframes ctaShimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+        
+        .tour-btn {
+            display: inline-block;
+            padding: 20px 50px;
+            background: white;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .tour-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .tour-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .tour-btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .tour-btn span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .executive-footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 50%, #1a1a1a 100%);
+            color: #ecf0f1;
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .executive-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3498db, #2ecc71, #3498db);
+            animation: footerLine 4s linear infinite;
+        }
+        
+        @keyframes footerLine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 20px;
+                border-radius: 20px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .app-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="aurora-bg">
+        <div class="aurora"></div>
+        <div class="aurora"></div>
+        <div class="aurora"></div>
+    </div>
+    
+    <div class="email-container">
+        <div class="header">
+            <span class="service-badge">⚡ CONCIERGE SERVICE ⚡</span>
+            <h1>Beyond the Sale: Your Service Advantage</h1>
+            <p style="color: white; font-size: 18px; position: relative; z-index: 1;">Keeping your fleet profitable, mile after mile</p>
+        </div>
+        
+        <div style="padding: 40px 30px;">
+            <p style="font-size: 20px; color: #2c3e50; margin-bottom: 20px;">Dear {FirstName},</p>
+            
+            <p style="color: #5a6c7d; line-height: 1.8; margin-bottom: 30px; font-size: 16px;">
+                Choosing fleet vehicles is just the beginning. What truly matters is keeping them on the road, earning revenue. That's where our <strong>Executive Concierge Service</strong> elevates your entire operation:
+            </p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Express VIP Service</h3>
+                    <ul class="service-features">
+                        <li>Dedicated executive service bays - zero waiting</li>
+                        <li>Extended hours: 6 AM - 8 PM weekdays</li>
+                        <li>Saturday VIP appointments available</li>
+                        <li>45-minute express maintenance guarantee</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🚐</div>
+                    <h3 class="service-title">Mobile Concierge Units</h3>
+                    <ul class="service-features">
+                        <li>Service comes to your headquarters</li>
+                        <li>On-site oil changes & tire rotations</li>
+                        <li>Full diagnostic capabilities mobile</li>
+                        <li>Fleet-wide service in one visit</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-title">Executive Fleet Portal</h3>
+                    <ul class="service-features">
+                        <li>Real-time fleet tracking dashboard</li>
+                        <li>Predictive maintenance alerts</li>
+                        <li>Digital expense management</li>
+                        <li>Custom reporting & analytics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="guarantee-section">
+                <h3 style="color: #2ecc71; font-size: 32px; margin-bottom: 20px; position: relative; z-index: 1;">
+                    💚 Our Executive Uptime Guarantee
+                </h3>
+                <p style="color: white; font-size: 20px; line-height: 1.6; position: relative; z-index: 1;">
+                    If we can't complete your fleet service same-day,<br>
+                    <strong style="font-size: 24px;">we provide a FREE luxury loaner</strong>
+                </p>
+                <p style="color: #ecf0f1; font-size: 16px; margin-top: 15px; position: relative; z-index: 1;">
+                    Your business never stops. Neither should your fleet.
+                </p>
+            </div>
+            
+            <div class="metrics-container">
+                <div class="metric-item">
+                    <div class="metric-number">45min</div>
+                    <div class="metric-label">Average Service Time</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">98%</div>
+                    <div class="metric-label">Same-Day Completion</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">24/7</div>
+                    <div class="metric-label">Emergency Support</div>
+                </div>
+            </div>
+            
+            <div class="tech-showcase">
+                <h3 style="color: #2c3e50; margin-bottom: 20px; font-size: 26px; position: relative; z-index: 1;">
+                    📱 Fleet Management Technology
+                </h3>
+                <p style="color: #5a6c7d; margin-bottom: 20px; position: relative; z-index: 1;">
+                    Our exclusive Executive Fleet App empowers you with:
+                </p>
+                <div class="app-features">
+                    <div class="app-feature">
+                        <span class="app-icon">📅</span>
+                        <span>Schedule entire fleet service</span>
+                    </div>
+                    <div class="app-feature">
+                        <span class="app-icon">📊</span>
+                        <span>Live repair tracking</span>
+                    </div>
+                    <div class="app-feature">
+                        <span class="app-icon">✅</span>
+                        <span>Remote repair approval</span>
+                    </div>
+                    <div class="app-feature">
+                        <span class="app-icon">📈</span>
+                        <span>Cost analysis reports</span>
+                    </div>
+                    <div class="app-feature">
+                        <span class="app-icon">🔔</span>
+                        <span>Predictive maintenance AI</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-premium">
+                <h3 style="color: white; font-size: 30px; margin-bottom: 15px; position: relative; z-index: 1;">
+                    Experience Our Service Excellence
+                </h3>
+                <p style="color: white; font-size: 18px; margin-bottom: 20px; position: relative; z-index: 1;">
+                    Tour our VIP facilities and meet your dedicated service team
+                </p>
+                <a href="https://www.ancirachev.com/schedule-service/" class="tour-btn">
+                    <span>Schedule Executive Tour</span>
+                </a>
+            </div>
+            
+            <p style="color: #5a6c7d; line-height: 1.8; font-size: 16px; margin: 30px 0;">
+                {FirstName}, your fleet's success is our mission. From acquisition to service, we're your complete executive fleet solution.
+            </p>
+            
+            <p style="color: #5a6c7d; line-height: 1.8; font-size: 16px; margin: 30px 0;">
+                Questions about our concierge capabilities? I'm always available to discuss how we can optimize your fleet operations.
+            </p>
+            
+            <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #e0e0e0;">
+                <p style="color: #5a6c7d;">
+                    Your fleet success partner,<br>
+                    <strong style="font-size: 20px; color: #2c3e50;">Executive Fleet Concierge</strong><br>
+                    Ancira Fleet Excellence Division<br>
+                    Direct: (210) 681-4900
+                </p>
+            </div>
+        </div>
+        
+        <div class="executive-footer">
+            <p style="margin: 10px 0; font-size: 18px;">SERVICE EXCELLENCE CENTERS</p>
+            <p style="margin: 10px 0; font-size: 16px;">Service: (210) 201-7261 | Parts: (210) 201-1619</p>
+            <p style="margin: 10px 0; font-size: 14px;">Multiple VIP Locations Throughout San Antonio</p>
+            <p style="margin: 20px 0;">
+                <a href="https://www.ancirachev.com/schedule-service/" style="color: #3498db; text-decoration: none; margin: 0 15px;">Service Scheduler</a> |
+                <a href="https://www.ancirachev.com/parts/" style="color: #3498db; text-decoration: none; margin: 0 15px;">Parts Catalog</a> |
+                <a href="#" style="color: #3498db; text-decoration: none; margin: 0 15px;">VIP Portal</a>
+            </p>
+            <p style="font-size: 12px; color: #7f8c8d; margin-top: 20px;">© 2025 Ancira Auto Group | Executive Fleet Division</p>
+        </div>
+    </div>
+</body>
+</html>

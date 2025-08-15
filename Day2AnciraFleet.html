@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Fleet Technology Revolution - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated circuit board background */
+        .tech-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .circuit-element {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.03;
+            animation: pulse-tech 8s ease-in-out infinite;
+        }
+
+        .circuit-element::before {
+            content: '⚡';
+            font-size: 40px;
+            position: absolute;
+            color: #3498db;
+        }
+
+        .circuit-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circuit-element:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .circuit-element:nth-child(3) {
+            bottom: 30%;
+            left: 25%;
+            animation-delay: 4s;
+        }
+
+        .circuit-element:nth-child(4) {
+            bottom: 15%;
+            right: 20%;
+            animation-delay: 6s;
+        }
+
+        .circuit-element:nth-child(5) {
+            top: 60%;
+            left: 50%;
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse-tech {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg); 
+                opacity: 0.03; 
+            }
+            25% { 
+                transform: scale(1.2) rotate(90deg); 
+                opacity: 0.06; 
+            }
+            50% { 
+                transform: scale(0.8) rotate(180deg); 
+                opacity: 0.04; 
+            }
+            75% { 
+                transform: scale(1.1) rotate(270deg); 
+                opacity: 0.05; 
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Data streaming effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3498db, #2ecc71, #f39c12, transparent);
+            animation: data-stream 3s linear infinite;
+        }
+
+        @keyframes data-stream {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo-accent {
+            color: #3498db;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .tech-highlight {
+            color: #8e44ad;
+            font-size: 42px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Technology Features Grid */
+        .tech-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 45px 0;
+        }
+
+        .tech-card {
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 35px;
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-top: 4px solid #8e44ad;
+            overflow: hidden;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(142, 68, 173, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-card:hover::before {
+            left: 100%;
+        }
+
+        .tech-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tech-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .tech-description {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tech-benefits {
+            list-style: none;
+            font-size: 13px;
+            color: #5a6c7d;
+        }
+
+        .tech-benefits li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tech-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #8e44ad;
+            font-weight: bold;
+        }
+
+        /* OnStar Showcase */
+        .onstar-showcase {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            padding: 45px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .onstar-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .onstar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .onstar-subtitle {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .onstar-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .onstar-feature {
+            text-align: center;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .onstar-feature:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .onstar-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .onstar-feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .onstar-feature-desc {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* Connectivity Dashboard */
+        .connectivity-dashboard {
+            background: #2c3e50;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+        }
+
+        .dashboard-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-metric {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+        }
+
+        .metric-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .dashboard-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .dashboard-feature {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #3498db;
+        }
+
+        .dashboard-feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #3498db;
+        }
+
+        .dashboard-feature-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Innovation Timeline */
+        .innovation-timeline {
+            margin: 45px 0;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #8e44ad;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.7s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            background: #8e44ad;
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px #8e44ad;
+        }
+
+        .timeline-year {
+            font-size: 14px;
+            font-weight: 700;
+            color: #8e44ad;
+            margin-bottom: 8px;
+        }
+
+        .timeline-innovation {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            font-size: 14px;
+            color: #5a6c7d;
+            line-height: 1.5;
+        }
+
+        /* Comparison Table */
+        .tech-comparison {
+            margin: 45px 0;
+        }
+
+        .comparison-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: #8e44ad;
+            color: #ffffff;
+            padding: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e8f4fd;
+        }
+
+        .check-icon {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .x-icon {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cta-subtitle {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            margin: 0 10px 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button.primary {
+            background: #8e44ad;
+            color: #ffffff;
+        }
+
+        .cta-button.primary:hover {
+            background: #7d3c98;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+        }
+
+        .cta-button.secondary:hover {
+            background: #2c3e50;
+            color: #ffffff;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #9b59b6;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .tech-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .onstar-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .dashboard-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 50px);
+                margin-left: 50px !important;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated tech background -->
+        <div class="tech-animation">
+            <div class="circuit-element"></div>
+            <div class="circuit-element"></div>
+            <div class="circuit-element"></div>
+            <div class="circuit-element"></div>
+            <div class="circuit-element"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">Fleet Technology Innovation Center</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Experience the <span class="tech-highlight">Future</span> of Fleet Management</h1>
+                <p class="hero-subtitle">Advanced connectivity, real-time monitoring, and intelligent fleet solutions that put you in complete control of your operation from anywhere, anytime.</p>
+            </div>
+
+            <div class="tech-features">
+                <div class="tech-card">
+                    <div class="tech-icon">📡</div>
+                    <div class="tech-title">OnStar Commercial</div>
+                    <div class="tech-description">Complete fleet connectivity with real-time vehicle tracking, diagnostics, and emergency response capabilities.</div>
+                    <ul class="tech-benefits">
+                        <li>Real-time GPS tracking</li>
+                        <li>Vehicle diagnostics alerts</li>
+                        <li>Emergency assistance</li>
+                        <li>Remote door unlock</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon">📱</div>
+                    <div class="tech-title">Chevrolet Connected Services</div>
+                    <div class="tech-description">Mobile app control for fleet management, maintenance scheduling, and performance monitoring.</div>
+                    <ul class="tech-benefits">
+                        <li>Remote start/stop</li>
+                        <li>Maintenance reminders</li>
+                        <li>Fuel level monitoring</li>
+                        <li>Usage reports</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon">🛡️</div>
+                    <div class="tech-title">Advanced Safety Systems</div>
+                    <div class="tech-description">Collision avoidance, lane departure warnings, and driver assistance technologies.</div>
+                    <ul class="tech-benefits">
+                        <li>Forward collision alert</li>
+                        <li>Lane keep assist</li>
+                        <li>Blind spot monitoring</li>
+                        <li>Rear cross traffic alert</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon">⚡</div>
+                    <div class="tech-title">Fleet Intelligence Platform</div>
+                    <div class="tech-description">AI-powered analytics for route optimization, driver behavior analysis, and predictive maintenance.</div>
+                    <ul class="tech-benefits">
+                        <li>Route optimization</li>
+                        <li>Driver scorecards</li>
+                        <li>Predictive maintenance</li>
+                        <li>Cost analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="onstar-showcase">
+                <h2 class="onstar-title">OnStar Commercial: Your Fleet Command Center</h2>
+                <p class="onstar-subtitle">Monitor and manage your entire fleet from a single dashboard</p>
+                
+                <div class="onstar-features">
+                    <div class="onstar-feature">
+                        <div class="onstar-icon">🗺️</div>
+                        <div class="onstar-feature-title">Live Fleet Tracking</div>
+                        <div class="onstar-feature-desc">See every vehicle's location, speed, and status in real-time</div>
+                    </div>
+                    <div class="onstar-feature">
+                        <div class="onstar-icon">🔧</div>
+                        <div class="onstar-feature-title">Proactive Diagnostics</div>
+                        <div class="onstar-feature-desc">Get maintenance alerts before issues become expensive problems</div>
+                    </div>
+                    <div class="onstar-feature">
+                        <div class="onstar-icon">📊</div>
+                        <div class="onstar-feature-title">Performance Analytics</div>
+                        <div class="onstar-feature-desc">Detailed reports on fuel usage, driver behavior, and efficiency</div>
+                    </div>
+                    <div class="onstar-feature">
+                        <div class="onstar-icon">🚨</div>
+                        <div class="onstar-feature-title">Emergency Response</div>
+                        <div class="onstar-feature-desc">Automatic crash notification and emergency assistance</div>
+                    </div>
+                    <div class="onstar-feature">
+                        <div class="onstar-icon">🔒</div>
+                        <div class="onstar-feature-title">Vehicle Security</div>
+                        <div class="onstar-feature-desc">Remote door lock/unlock and stolen vehicle assistance</div>
+                    </div>
+                    <div class="onstar-feature">
+                        <div class="onstar-icon">📱</div>
+                        <div class="onstar-feature-title">Mobile Management</div>
+                        <div class="onstar-feature-desc">Complete fleet control from your smartphone or tablet</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connectivity-dashboard">
+                <h2 class="dashboard-title">Connected Fleet Dashboard Metrics</h2>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-metric">
+                        <div class="metric-number">24/7</div>
+                        <div class="metric-label">Monitoring</div>
+                    </div>
+                    <div class="dashboard-metric">
+                        <div class="metric-number">15 Sec</div>
+                        <div class="metric-label">Update Interval</div>
+                    </div>
+                    <div class="dashboard-metric">
+                        <div class="metric-number">99.9%</div>
+                        <div class="metric-label">Uptime</div>
+                    </div>
+                    <div class="dashboard-metric">
+                        <div class="metric-number">1000+</div>
+                        <div class="metric-label">Data Points</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-features">
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-title">Real-Time Alerts</div>
+                        <div class="dashboard-feature-desc">Instant notifications for maintenance needs, harsh driving events, and unauthorized vehicle use</div>
+                    </div>
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-title">Route Optimization</div>
+                        <div class="dashboard-feature-desc">AI-powered routing that adapts to traffic, weather, and job priorities to save time and fuel</div>
+                    </div>
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-title">Driver Coaching</div>
+                        <div class="dashboard-feature-desc">Automated feedback and training recommendations based on driving behavior analysis</div>
+                    </div>
+                    <div class="dashboard-feature">
+                        <div class="dashboard-feature-title">Compliance Reporting</div>
+                        <div class="dashboard-feature-desc">Automated reports for DOT compliance, safety audits, and insurance requirements</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="innovation-timeline">
+                <h2 class="timeline-title">Fleet Technology Evolution</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <div class="timeline-innovation">OnStar 4G LTE</div>
+                            <div class="timeline-description">High-speed internet connectivity for every fleet vehicle</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-innovation">AI Fleet Analytics</div>
+                            <div class="timeline-description">Machine learning algorithms for predictive maintenance and optimization</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-innovation">Advanced Driver Assistance</div>
+                            <div class="timeline-description">Enhanced safety systems with collision avoidance and lane keeping</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-innovation">Fleet Command Center</div>
+                            <div class="timeline-description">Integrated platform for complete fleet management and control</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-comparison">
+                <h2 class="comparison-title">Technology Comparison: Chevrolet vs Competition</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Chevrolet</th>
+                            <th>Ford</th>
+                            <th>Ram</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Built-in 4G LTE</strong></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="x-icon">✗</span></td>
+                            <td><span class="x-icon">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>OnStar Commercial</strong></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="x-icon">✗</span></td>
+                            <td><span class="x-icon">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Real-Time Diagnostics</strong></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="x-icon">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile Fleet App</strong></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Route Optimization</strong></td>
+                            <td><span class="check-icon">✓</span></td>
+                            <td><span class="x-icon">✗</span></td>
+                            <td><span class="x-icon">✗</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-title">Experience Fleet Technology Innovation</div>
+                <div class="cta-subtitle">Schedule a demonstration of our connected fleet solutions</div>
+                
+                <a href="tel:210-231-4350" class="cta-button primary">Call Tech Team: (210) 231-4350</a>
+                <a href="https://www.ancirachev.com/fleet-tech-demo" class="cta-button secondary">Book Demo</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Technology Center</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Technology Support: Mon-Fri 7:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

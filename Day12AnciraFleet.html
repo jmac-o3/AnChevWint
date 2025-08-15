@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚪 Our Door is Always Open - Ancira Winton Chevrolet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #2c3e50;
+        }
+
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated door and welcome elements */
+        .welcome-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .welcome-element {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            opacity: 0.04;
+            animation: gentle-welcome 16s ease-in-out infinite;
+        }
+
+        .welcome-element::before {
+            font-size: 35px;
+            position: absolute;
+        }
+
+        .welcome-element:nth-child(1)::before {
+            content: '🚪';
+        }
+
+        .welcome-element:nth-child(2)::before {
+            content: '👋';
+        }
+
+        .welcome-element:nth-child(3)::before {
+            content: '🤝';
+        }
+
+        .welcome-element:nth-child(4)::before {
+            content: '💼';
+        }
+
+        .welcome-element:nth-child(5)::before {
+            content: '🚪';
+        }
+
+        .welcome-element:nth-child(6)::before {
+            content: '✨';
+        }
+
+        .welcome-element:nth-child(1) {
+            top: 20%;
+            left: 12%;
+            animation-delay: 0s;
+        }
+
+        .welcome-element:nth-child(2) {
+            top: 35%;
+            right: 18%;
+            animation-delay: 3s;
+        }
+
+        .welcome-element:nth-child(3) {
+            bottom: 40%;
+            left: 22%;
+            animation-delay: 6s;
+        }
+
+        .welcome-element:nth-child(4) {
+            bottom: 25%;
+            right: 20%;
+            animation-delay: 9s;
+        }
+
+        .welcome-element:nth-child(5) {
+            top: 55%;
+            left: 45%;
+            animation-delay: 12s;
+        }
+
+        .welcome-element:nth-child(6) {
+            top: 70%;
+            right: 40%;
+            animation-delay: 15s;
+        }
+
+        @keyframes gentle-welcome {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+                opacity: 0.04; 
+            }
+            25% { 
+                transform: translateY(-8px) rotate(3deg) scale(1.02); 
+                opacity: 0.06; 
+            }
+            50% { 
+                transform: translateY(-4px) rotate(-2deg) scale(0.98); 
+                opacity: 0.05; 
+            }
+            75% { 
+                transform: translateY(-12px) rotate(5deg) scale(1.01); 
+                opacity: 0.04; 
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Welcoming wave effect */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71, #f1c40f, #e67e22, #e74c3c, #9b59b6, #3498db);
+            animation: welcome-wave 5s linear infinite;
+        }
+
+        @keyframes welcome-wave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .logo-accent {
+            color: #f1c40f;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #ecf0f1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 3;
+        }
+
+        .main-content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .door-highlight {
+            color: #2980b9;
+            font-size: 42px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Journey Recap */
+        .journey-recap {
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            border-left: 4px solid #2980b9;
+        }
+
+        .recap-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .recap-item {
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 3px solid #2980b9;
+        }
+
+        .recap-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .recap-day {
+            font-size: 12px;
+            color: #2980b9;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .recap-topic {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .recap-summary {
+            font-size: 13px;
+            color: #7f8c8d;
+            line-height: 1.4;
+        }
+
+        /* No Pressure Section */
+        .no-pressure {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .no-pressure::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .pressure-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pressure-subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pressure-points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pressure-point {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pressure-point:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        .pressure-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .pressure-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Ways to Connect */
+        .connect-ways {
+            margin: 45px 0;
+        }
+
+        .connect-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .connect-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .connect-option {
+            padding: 30px;
+            background: #fafafa;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border-top: 4px solid #2980b9;
+            overflow: hidden;
+        }
+
+        .connect-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(41, 128, 185, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .connect-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .connect-option:hover::before {
+            left: 100%;
+        }
+
+        .connect-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2980b9;
+        }
+
+        .connect-method {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .connect-description {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .connect-button {
+            background: #2980b9;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .connect-button:hover {
+            background: #21618c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+        }
+
+        /* Future Opportunities */
+        .future-opportunities {
+            background: #2c3e50;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            color: #ffffff;
+        }
+
+        .future-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .opportunities-list {
+            list-style: none;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .opportunity-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .opportunity-item:last-child {
+            border-bottom: none;
+        }
+
+        .opportunity-icon {
+            font-size: 20px;
+            margin-right: 15px;
+            width: 30px;
+        }
+
+        .opportunity-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Final Message */
+        .final-message {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 45px 0;
+            text-align: center;
+        }
+
+        .final-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .final-text {
+            font-size: 16px;
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .final-cta {
+            background: #2980b9;
+            color: #ffffff;
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(41, 128, 185, 0.3);
+        }
+
+        .final-cta:hover {
+            background: #21618c;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(41, 128, 185, 0.4);
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #2980b9;
+        }
+
+        .contact-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .contact-detail {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2980b9;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 35px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            font-size: 13px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        .footer-thanks {
+            background: #2980b9;
+            color: #ffffff;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .recap-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pressure-points {
+                grid-template-columns: 1fr;
+            }
+            
+            .connect-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Animated welcome background -->
+        <div class="welcome-animation">
+            <div class="welcome-element"></div>
+            <div class="welcome-element"></div>
+            <div class="welcome-element"></div>
+            <div class="welcome-element"></div>
+            <div class="welcome-element"></div>
+            <div class="welcome-element"></div>
+        </div>
+
+        <div class="header">
+            <div class="logo">ANCIRA <span class="logo-accent">WINTON</span> CHEVROLET</div>
+            <div class="tagline">Our Door is Always Open</div>
+        </div>
+
+        <div class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Our <span class="door-highlight">Door</span> is Always Open</h1>
+                <p class="hero-subtitle">Whether you're ready to move forward today or just gathering information for the future, we're here when you need us. No pressure, no pushy sales tactics - just genuine fleet expertise when you're ready.</p>
+            </div>
+
+            <div class="journey-recap">
+                <h2 class="recap-title">What Makes Us Different</h2>
+                <div class="recap-grid">
+                    <div class="recap-item">
+                        <div class="recap-day">Service</div>
+                        <div class="recap-topic">Excellence Guaranteed</div>
+                        <div class="recap-summary">50+ service bays, 98% first-visit fix rate, dedicated fleet support</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Savings</div>
+                        <div class="recap-topic">Real Cost Reduction</div>
+                        <div class="recap-summary">30% fleet cost reduction, $8,400 annual savings per vehicle</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Financing</div>
+                        <div class="recap-topic">Best Rates Available</div>
+                        <div class="recap-summary">1.9% APR financing, fast approvals, flexible terms</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Inventory</div>
+                        <div class="recap-topic">Largest Selection</div>
+                        <div class="recap-summary">500+ fleet-ready vehicles, work trucks to cargo vans</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Incentives</div>
+                        <div class="recap-topic">Maximum Savings</div>
+                        <div class="recap-summary">$7,500 fleet cash, 0.9% special rates, bonus programs</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Results</div>
+                        <div class="recap-topic">Proven Success</div>
+                        <div class="recap-summary">1,200+ satisfied fleets, proven ROI, real testimonials</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Technology</div>
+                        <div class="recap-topic">Advanced Solutions</div>
+                        <div class="recap-summary">OnStar Commercial, AI analytics, 24/7 monitoring</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Leadership</div>
+                        <div class="recap-topic">Market Advantage</div>
+                        <div class="recap-summary">#1 fleet dealer, best pricing guarantee, local expertise</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Personal</div>
+                        <div class="recap-topic">Family Values</div>
+                        <div class="recap-summary">30+ years local, personal relationships, community focused</div>
+                    </div>
+                    <div class="recap-item">
+                        <div class="recap-day">Approach</div>
+                        <div class="recap-topic">No Pressure</div>
+                        <div class="recap-summary">Consultative service, always available, here when you're ready</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="no-pressure">
+                <h2 class="pressure-title">No Pressure, Just Expertise</h2>
+                <p class="pressure-subtitle">We believe the right fleet solution sells itself</p>
+                
+                <div class="pressure-points">
+                    <div class="pressure-point">
+                        <div class="pressure-icon">🤝</div>
+                        <div class="pressure-text">Consultative approach - we listen first, recommend second</div>
+                    </div>
+                    <div class="pressure-point">
+                        <div class="pressure-icon">⏰</div>
+                        <div class="pressure-text">Move at your pace - no artificial deadlines or urgency</div>
+                    </div>
+                    <div class="pressure-point">
+                        <div class="pressure-icon">📋</div>
+                        <div class="pressure-text">Information without obligation - ask anything, anytime</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connect-ways">
+                <h2 class="connect-title">Multiple Ways to Connect</h2>
+                <div class="connect-options">
+                    <div class="connect-option">
+                        <div class="connect-icon">📞</div>
+                        <div class="connect-method">Quick Phone Call</div>
+                        <div class="connect-description">5-minute conversation to understand your needs and timeline</div>
+                        <a href="tel:210-231-4350" class="connect-button">Call (210) 231-4350</a>
+                    </div>
+                    <div class="connect-option">
+                        <div class="connect-icon">🏢</div>
+                        <div class="connect-method">Visit Our Facility</div>
+                        <div class="connect-description">Tour our service center and see our fleet inventory firsthand</div>
+                        <a href="https://www.ancirachev.com/visit-us" class="connect-button">Schedule Tour</a>
+                    </div>
+                    <div class="connect-option">
+                        <div class="connect-icon">📧</div>
+                        <div class="connect-method">Email Questions</div>
+                        <div class="connect-description">Send us your fleet requirements for a detailed proposal</div>
+                        <a href="mailto:fleet@ancirachev.com" class="connect-button">Email Us</a>
+                    </div>
+                    <div class="connect-option">
+                        <div class="connect-icon">💼</div>
+                        <div class="connect-method">Fleet Consultation</div>
+                        <div class="connect-description">Comprehensive fleet analysis and custom recommendations</div>
+                        <a href="https://www.ancirachev.com/fleet-consultation" class="connect-button">Book Meeting</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="future-opportunities">
+                <h2 class="future-title">We're Here for Future Opportunities Too</h2>
+                <ul class="opportunities-list">
+                    <li class="opportunity-item">
+                        <div class="opportunity-icon">📈</div>
+                        <div class="opportunity-text">When your business grows and you need to expand your fleet</div>
+                    </li>
+                    <li class="opportunity-item">
+                        <div class="opportunity-icon">🔄</div>
+                        <div class="opportunity-text">When it's time to replace aging vehicles in your current fleet</div>
+                    </li>
+                    <li class="opportunity-item">
+                        <div class="opportunity-icon">🛠️</div>
+                        <div class="opportunity-text">When you need reliable service for your existing vehicles</div>
+                    </li>
+                    <li class="opportunity-item">
+                        <div class="opportunity-icon">💡</div>
+                        <div class="opportunity-text">When you want to explore new fleet technologies and solutions</div>
+                    </li>
+                    <li class="opportunity-item">
+                        <div class="opportunity-icon">🤔</div>
+                        <div class="opportunity-text">When you just need honest advice about fleet management</div>
+                    </li>
+                    <li class="opportunity-item">
+                        <div class="opportunity-icon">🆘</div>
+                        <div class="opportunity-text">When you have a fleet emergency and need immediate support</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="final-message">
+                <h2 class="final-title">Thank You for Your Time</h2>
+                <p class="final-text">
+                    We know your time is valuable, and we appreciate you taking the journey with us over the past 10 days. Whether you choose Ancira Winton or another solution, we hope these insights help you make the best decision for your business. Remember - we're always here when you're ready to talk fleet.
+                </p>
+                <a href="tel:210-231-4350" class="final-cta">Ready to Talk? Call (210) 231-4350</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-header">Your Direct Fleet Contacts</div>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-label">Fleet Hotline</div>
+                        <div class="contact-value">(210) 231-4350</div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-label">Fleet Email</div>
+                        <div class="contact-value">fleet@ancirachev.com</div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-label">Address</div>
+                        <div class="contact-value">6111 Bandera Road</div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-label">Hours</div>
+                        <div class="contact-value">Mon-Fri 7AM-7PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">Ancira Winton Chevrolet Fleet Center</div>
+            <div class="footer-content">
+                <p>6111 Bandera Road, San Antonio, TX 78238</p>
+                <p>Your Fleet Partner: Always Ready, Never Pushy</p>
+            </div>
+            <div class="footer-thanks">
+                Thank you for considering Ancira Winton for your fleet needs. We look forward to earning your business when the time is right.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
