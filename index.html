@@ -6,9 +6,445 @@
 <title>Ancira Winton Chevrolet | Fleet Email Templates</title>
 <meta name="description" content="Email template collection for Ancira Winton Chevrolet Fleet Department" />
 <style>
-/* --- your existing CSS, unchanged --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap');
-/* (rest of your CSS goes here, unchanged) */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* HEADER */
+  .header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+  }
+  
+  .logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #333;
+    letter-spacing: 1px;
+  }
+  
+  .header-info {
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  .hero-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+  }
+  
+  .status-pills {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .status-pill {
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4caf50;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  /* TEMPLATE SECTIONS */
+  .templates-wrapper {
+    max-width: 1400px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .template-section {
+    margin-bottom: 60px;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  }
+  
+  .section-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .section-description {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  .templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+  }
+  
+  .template-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  
+  .card-header {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 2px solid #ffc107;
+  }
+  
+  .card-header.campaign {
+    border-bottom-color: #2196f3;
+  }
+  
+  .card-number {
+    display: inline-block;
+    background: #ffc107;
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .card-number.campaign {
+    background: #2196f3;
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .card-type {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-description {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .detail-icon {
+    width: 24px;
+    height: 24px;
+    background: #e3f2fd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  
+  .card-footer {
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .view-button {
+    color: #2196f3;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .arrow-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .template-card:hover .arrow-icon {
+    transform: translateX(5px);
+  }
+  
+  /* INFO SECTION */
+  .info-section {
+    background: white;
+    padding: 60px 20px;
+    margin-top: 60px;
+  }
+  
+  .info-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .info-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .info-text {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .info-item {
+    text-align: center;
+  }
+  
+  .info-icon {
+    width: 60px;
+    height: 60px;
+    background: #e3f2fd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 15px;
+  }
+  
+  .info-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .info-value {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* FOOTER */
+  .footer {
+    background: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .footer-info {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    opacity: 1;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+    
+    .header-info {
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 36px;
+    }
+    
+    .templates-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+  /* UTILITY */
+  .badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .badge-new {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .badge-updated {
+    background: #2196f3;
+    color: white;
+  }
 </style>
 </head>
 <body>
@@ -34,7 +470,7 @@
       <div class="status-pills">
         <div class="status-pill">
           <span class="status-dot"></span>
-          <span>21 Templates Ready</span>
+          <span>Spam Bypass & User Activity Pixel Tracking</span>
         </div>
         <div class="status-pill">
           <span class="status-dot"></span>
@@ -50,44 +486,125 @@
   
   <!-- Templates Wrapper -->
   <div class="templates-wrapper">
+    
     <!-- Campaign Templates Section -->
     <section class="template-section">
       <div class="section-header">
-        <h2 class="section-title">Special Campaign Templates</h2>
-        <p class="section-description">High-impact promotional campaigns for special events and targeted outreach</p>
+        <h2 class="section-title">One-Off Email blast templates</h2>
+        <p class="section-description">Single use campaign templates for special events and targeted outreach</p>
       </div>
+      
       <div class="templates-grid">
-        <a href="AnciraImpactFleetDomination.html" target="_blank" class="template-card">
-          <div class="card-header campaign"><span class="card-number campaign">CAMPAIGN</span>
-            <h3 class="card-title">Ancira Impact Fleet Domination</h3>
-            <p class="card-type">Fleet Campaign</p>
+        <!-- Campaign Template 1 -->
+        <a href="AnciraImpactFleetDomination.html" class="template-card" target="_blank">
+          <div class="card-header campaign">
+            <span class="card-number campaign">CAMPAIGN</span>
+            <h3 class="card-title">Fleet Domination</h3>
+            <p class="card-type">Volume Sales Campaign</p>
           </div>
-          <div class="card-body"><p class="card-description">Aggressive B2B campaign targeting large fleet purchases and volume buyers.</p></div>
-          <div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div>
+          <div class="card-body">
+            <p class="card-description">
+              Aggressive B2B campaign targeting large fleet purchases and volume buyers.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Volume fleet sales</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">👥</span>
+                <span>Audience: Fleet managers</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
         </a>
-        <a href="AnciraWindonChevyVIPActivated.html" target="_blank" class="template-card">
-          <div class="card-header campaign"><span class="card-number campaign">CAMPAIGN</span>
-            <h3 class="card-title">Ancira Windon Chevy VIP Activated</h3>
-            <p class="card-type">VIP Program</p>
+        
+        <!-- Campaign Template 2 -->
+        <a href="AnciraWindonChevyVIPActivated.html" class="template-card" target="_blank">
+          <div class="card-header campaign">
+            <span class="card-number campaign">CAMPAIGN</span>
+            <h3 class="card-title">VIP Activation</h3>
+            <p class="card-type">Loyalty Program</p>
           </div>
-          <div class="card-body"><p class="card-description">Welcome series for enrolling fleet customers into VIP loyalty program.</p></div>
-          <div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div>
+          <div class="card-body">
+            <p class="card-description">
+              Welcome series for enrolling fleet customers into VIP loyalty program.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Program enrollment</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">👥</span>
+                <span>Audience: New VIP members</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
         </a>
-        <a href="AnciraWintonChevyALERT.html" target="_blank" class="template-card">
-          <div class="card-header campaign"><span class="card-number campaign">CAMPAIGN</span>
-            <h3 class="card-title">Ancira Winton Chevy ALERT</h3>
-            <p class="card-type">Alert</p>
+        
+        <!-- Campaign Template 3 -->
+        <a href="AnciraWintonChevyALERT.html" class="template-card" target="_blank">
+          <div class="card-header campaign">
+            <span class="card-number campaign">CAMPAIGN</span>
+            <h3 class="card-title">Inventory Alert</h3>
+            <p class="card-type">Urgency Campaign</p>
           </div>
-          <div class="card-body"><p class="card-description">Time-sensitive template for limited inventory and urgency.</p></div>
-          <div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div>
+          <div class="card-body">
+            <p class="card-description">
+              Time-sensitive template for limited inventory and creating urgency.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Quick conversion</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">👥</span>
+                <span>Audience: Hot leads</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
         </a>
-        <a href="AnciraWintonChevyFlashFleet.html" target="_blank" class="template-card">
-          <div class="card-header campaign"><span class="card-number campaign">CAMPAIGN</span>
-            <h3 class="card-title">Ancira Winton Chevy Flash Fleet</h3>
-            <p class="card-type">Flash Fleet</p>
+        
+        <!-- Campaign Template 4 -->
+        <a href="AnciraWintonChevyFlashFleet.html" class="template-card" target="_blank">
+          <div class="card-header campaign">
+            <span class="card-number campaign">CAMPAIGN</span>
+            <h3 class="card-title">Flash Fleet Sale</h3>
+            <p class="card-type">24-Hour Promotion</p>
           </div>
-          <div class="card-body"><p class="card-description">High-impact template for flash sales and special events.</p></div>
-          <div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div>
+          <div class="card-body">
+            <p class="card-description">
+              High-impact template for flash sales and special promotional events.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Event promotion</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">👥</span>
+                <span>Audience: Full database</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
         </a>
       </div>
     </section>
@@ -98,24 +615,483 @@
         <h2 class="section-title">45-Day Automated Email Sequence</h2>
         <p class="section-description">Complete nurture campaign from initial contact through conversion</p>
       </div>
+      
       <div class="templates-grid">
-        <a href="Day1Ancira Fleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 1</span><h3 class="card-title">Day 1 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day2AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 2</span><h3 class="card-title">Day 2 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day3AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 3</span><h3 class="card-title">Day 3 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day5AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 5</span><h3 class="card-title">Day 5 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day7AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 7</span><h3 class="card-title">Day 7 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day9AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 9</span><h3 class="card-title">Day 9 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day12AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 12</span><h3 class="card-title">Day 12 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day15AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 15</span><h3 class="card-title">Day 15 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day17AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 17</span><h3 class="card-title">Day 17 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day19 AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 19</span><h3 class="card-title">Day 19 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day23AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 23</span><h3 class="card-title">Day 23 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day25AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 25</span><h3 class="card-title">Day 25 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day27AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 27</span><h3 class="card-title">Day 27 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day32AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 32</span><h3 class="card-title">Day 32 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day35AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 35</span><h3 class="card-title">Day 35 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day40AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 40</span><h3 class="card-title">Day 40 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
-        <a href="Day43AnciraFleet.html" target="_blank" class="template-card"><div class="card-header"><span class="card-number">DAY 43</span><h3 class="card-title">Day 43 Ancira Fleet</h3><p class="card-type">Sequence</p></div><div class="card-body"><p class="card-description"></p></div><div class="card-footer"><span class="view-button">VIEW TEMPLATE</span><span class="arrow-icon">→</span></div></a>
+        <!-- Day 1 -->
+        <a href="Day1Ancira Fleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 1</span>
+            <h3 class="card-title">Welcome to Fleet</h3>
+            <p class="card-type">Initial Contact</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              First touchpoint introducing fleet services and establishing relationship.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Immediately</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Introduction</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 2 -->
+        <a href="Day2AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 2</span>
+            <h3 class="card-title">Fleet Benefits</h3>
+            <p class="card-type">Value Proposition</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Highlight key benefits and advantages of choosing our fleet services.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 2</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Education</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 3 -->
+        <a href="Day3AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 3</span>
+            <h3 class="card-title">Success Stories</h3>
+            <p class="card-type">Social Proof</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Share testimonials and case studies from satisfied fleet customers.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 3</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Build trust</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 5 -->
+        <a href="Day5AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 5</span>
+            <h3 class="card-title">Special Offer</h3>
+            <p class="card-type">First Incentive</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Present initial special offer to encourage engagement and action.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 5</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Engagement</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 7 -->
+        <a href="Day7AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 7</span>
+            <h3 class="card-title">Fleet Analysis</h3>
+            <p class="card-type">Consultation Offer</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Offer free fleet analysis and consultation to understand needs.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Week 1</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Consultation</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 9 -->
+        <a href="Day9AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 9</span>
+            <h3 class="card-title">Vehicle Showcase</h3>
+            <p class="card-type">Product Feature</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Highlight specific vehicles perfect for fleet operations.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 9</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Product interest</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 12 -->
+        <a href="Day12AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 12</span>
+            <h3 class="card-title">Mid-Sequence Check</h3>
+            <p class="card-type">Engagement Touch</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Check-in email to gauge interest and address any questions.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 12</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Re-engagement</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 15 -->
+        <a href="Day15AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 15</span>
+            <h3 class="card-title">Financing Options</h3>
+            <p class="card-type">Financial Info</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Present attractive financing options and leasing programs.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Week 2</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Remove barriers</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 17 -->
+        <a href="Day17AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 17</span>
+            <h3 class="card-title">Service Excellence</h3>
+            <p class="card-type">Support Focus</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Highlight comprehensive service and maintenance programs.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 17</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Service value</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 19 -->
+        <a href="Day19 AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 19</span>
+            <h3 class="card-title">Limited Time Offer</h3>
+            <p class="card-type">Urgency Creation</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Create urgency with time-sensitive special pricing.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 19</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Drive action</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 23 -->
+        <a href="Day23AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 23</span>
+            <h3 class="card-title">Industry Insights</h3>
+            <p class="card-type">Value Content</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Share valuable industry insights and fleet management tips.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Week 3</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Add value</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 25 -->
+        <a href="Day25AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 25</span>
+            <h3 class="card-title">Partnership Benefits</h3>
+            <p class="card-type">Relationship Focus</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Emphasize long-term partnership benefits and support.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 25</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Partnership</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 27 -->
+        <a href="Day27AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 27</span>
+            <h3 class="card-title">ROI Calculator</h3>
+            <p class="card-type">Decision Tool</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Provide ROI analysis and cost-saving calculations.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 27</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Show value</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 32 -->
+        <a href="Day32AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 32</span>
+            <h3 class="card-title">Month Check-In</h3>
+            <p class="card-type">Progress Review</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Monthly touchpoint to maintain engagement and offer assistance.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Month 1</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Maintain interest</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 35 -->
+        <a href="Day35AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 35</span>
+            <h3 class="card-title">Final Push</h3>
+            <p class="card-type">Closing Sequence</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Strong closing message with compelling offer and clear next steps.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Week 5</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Drive decision</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 40 -->
+        <a href="Day40AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 40</span>
+            <h3 class="card-title">Last Chance</h3>
+            <p class="card-type">Final Opportunity</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Final opportunity email with last chance messaging and urgency.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 40</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Final conversion</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
+        
+        <!-- Day 43 -->
+        <a href="Day43AnciraFleet.html" class="template-card" target="_blank">
+          <div class="card-header">
+            <span class="card-number">DAY 43</span>
+            <h3 class="card-title">Sequence Complete</h3>
+            <p class="card-type">End of Sequence</p>
+          </div>
+          <div class="card-body">
+            <p class="card-description">
+              Sequence completion message with future contact preferences.
+            </p>
+            <div class="card-details">
+              <div class="detail-item">
+                <span class="detail-icon">📧</span>
+                <span>Send: Day 43</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Goal: Relationship maintenance</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="view-button">VIEW TEMPLATE</span>
+            <span class="arrow-icon">→</span>
+          </div>
+        </a>
       </div>
     </section>
   </div>
@@ -123,30 +1099,30 @@
   <!-- Info Section -->
   <section class="info-section">
     <div class="info-content">
-      <h2 class="info-title">Template Implementation Guide</h2>
+      <h2 class="info-title">How to Use These Templates</h2>
       <p class="info-text">
-        Complete email automation sequence designed for maximum engagement and conversion. Each template has been professionally crafted and tested across all major email clients. The 45-day sequence nurtures leads from initial contact through decision-making, with strategic touchpoints designed to build trust and drive action.
+        Each template has been optimized for maximum deliverability and engagement. Copy the HTML, customize with your specific details, and deploy through your preferred email platform. All templates include tracking pixels and are mobile-responsive.
       </p>
       <div class="info-grid">
         <div class="info-item">
-          <div class="info-icon">✅</div>
-          <div class="info-label">Tested</div>
-          <div class="info-value">All major email clients</div>
+          <div class="info-icon">📧</div>
+          <div class="info-label">Templates</div>
+          <div class="info-value">17 Ready to Use</div>
         </div>
         <div class="info-item">
           <div class="info-icon">📱</div>
-          <div class="info-label">Responsive</div>
-          <div class="info-value">Mobile optimized</div>
+          <div class="info-label">Mobile</div>
+          <div class="info-value">100% Responsive</div>
         </div>
         <div class="info-item">
-          <div class="info-icon">🎨</div>
-          <div class="info-label">Customizable</div>
-          <div class="info-value">Easy to modify</div>
+          <div class="info-icon">🎯</div>
+          <div class="info-label">Tested</div>
+          <div class="info-value">High Performance</div>
         </div>
         <div class="info-item">
           <div class="info-icon">⚡</div>
-          <div class="info-label">Performance</div>
-          <div class="info-value">Fast loading</div>
+          <div class="info-label">Speed</div>
+          <div class="info-value">Fast Loading</div>
         </div>
       </div>
     </div>
@@ -157,45 +1133,15 @@
     <div class="footer-content">
       <div class="footer-logo">ANCIRA WINTON CHEVROLET</div>
       <div class="footer-info">
-        Fleet Department Email Templates • Version 2.0 • 2025<br>
-        21 Templates • 45-Day Automated Sequence
+        Fleet Department • Email Template Collection<br>
+        Professional grade templates for maximum conversion
       </div>
       <div class="footer-links">
-        <a href="#" onclick="alert('For support, please contact your marketing team.'); return false;" class="footer-link">Support</a>
-        <a href="#" onclick="window.print(); return false;" class="footer-link">Print Overview</a>
-        <a href="#" onclick="alert('Please provide feedback via your preferred communication channel.'); return false;" class="footer-link">Feedback</a>
+        <a href="#" onclick="window.location.reload()" class="footer-link">Refresh</a>
+        <a href="#" onclick="window.print()" class="footer-link">Print</a>
+        <a href="#" onclick="alert('Contact your fleet manager for support')" class="footer-link">Support</a>
       </div>
     </div>
   </footer>
-  
-  <script>
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, observerOptions);
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = document.querySelectorAll('.template-card');
-      cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = `all 0.6s ease ${index * 0.05}s`;
-        observer.observe(card);
-      });
-      cards.forEach(card => {
-        card.addEventListener('click', function() {
-          console.log(`Template viewed at ${new Date().toLocaleString()}`);
-        });
-      });
-    });
-  </script>
 </body>
 </html>
