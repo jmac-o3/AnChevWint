@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>⚠️ 3 Competitors Just Claimed Their Fleets...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* LIVE ACTIVITY TICKER */
+        .live-ticker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #FF0000;
+            color: white;
+            padding: 10px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        
+        .ticker-content {
+            display: flex;
+            animation: tickerScroll 20s linear infinite;
+        }
+        
+        @keyframes tickerScroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        
+        .ticker-item {
+            white-space: nowrap;
+            padding: 0 50px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 50px auto 0;
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            z-index: 100;
+            box-shadow: 0 0 100px rgba(255,0,0,0.3),
+                        0 50px 100px rgba(0,0,0,0.8);
+            animation: urgentShake 0.5s ease-out;
+        }
+        
+        @keyframes urgentShake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
+        }
+        
+        .header {
+            background: #000;
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255,0,0,0.3) 0%, transparent 70%);
+            animation: redPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes redPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+        
+        .live-badge {
+            display: inline-block;
+            background: #FF0000;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 10;
+            animation: liveBlink 1s ease-in-out infinite;
+        }
+        
+        .live-badge::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            animation: liveDot 1s ease-in-out infinite;
+        }
+        
+        @keyframes liveBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        @keyframes liveDot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        h1 {
+            color: white;
+            font-size: 42px;
+            font-weight: 900;
+            margin: 20px 0;
+            position: relative;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            text-shadow: 0 0 30px rgba(255,0,0,0.5);
+        }
+        
+        .competitor-alert {
+            background: linear-gradient(135deg, #FF0000 0%, #8B0000 100%);
+            color: white;
+            padding: 30px;
+            margin: -20px -30px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .competitor-alert::before {
+            content: '⚠️';
+            position: absolute;
+            font-size: 150px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.1;
+            animation: warningPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes warningPulse {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.2); }
+        }
+        
+        .live-feed {
+            background: #f0f0f0;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .feed-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .live-indicator {
+            width: 12px;
+            height: 12px;
+            background: #FF0000;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: liveGlow 1s ease-in-out infinite;
+        }
+        
+        @keyframes liveGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,0,0,0.8); }
+            50% { box-shadow: 0 0 0 10px rgba(255,0,0,0); }
+        }
+        
+        .feed-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .activity-item {
+            background: white;
+            border-left: 4px solid #FFD700;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            position: relative;
+            animation: activitySlide 0.6s ease-out backwards;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .activity-item:nth-child(1) { animation-delay: 0.2s; }
+        .activity-item:nth-child(2) { animation-delay: 0.4s; }
+        .activity-item:nth-child(3) { animation-delay: 0.6s; }
+        .activity-item:nth-child(4) { animation-delay: 0.8s; }
+        
+        @keyframes activitySlide {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .activity-time {
+            font-size: 12px;
+            color: #FF0000;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .activity-text {
+            font-size: 16px;
+            color: #000;
+            margin-top: 5px;
+        }
+        
+        .inventory-tracker {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .inventory-tracker::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 10px,
+                rgba(255,0,0,0.1) 10px,
+                rgba(255,0,0,0.1) 20px
+            );
+            animation: scanMove 2s linear infinite;
+        }
+        
+        @keyframes scanMove {
+            from { transform: translateX(0); }
+            to { transform: translateX(20px); }
+        }
+        
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .inventory-card {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .inventory-card:hover {
+            background: rgba(255,215,0,0.2);
+            transform: scale(1.05);
+        }
+        
+        .inventory-number {
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFD700;
+            animation: numberTick 2s ease-in-out infinite;
+        }
+        
+        @keyframes numberTick {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .inventory-label {
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 5px;
+        }
+        
+        .inventory-status {
+            display: inline-block;
+            background: #FF0000;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 11px;
+            margin-top: 10px;
+            font-weight: bold;
+            animation: statusBlink 1s ease-in-out infinite;
+        }
+        
+        @keyframes statusBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .savings-calculator {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .savings-calculator::before {
+            content: '$$$';
+            position: absolute;
+            font-size: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            animation: moneyFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes moneyFloat {
+            0%, 100% { transform: translate(-50%, -50%) rotate(-5deg); }
+            50% { transform: translate(-50%, -60%) rotate(5deg); }
+        }
+        
+        .savings-amount {
+            font-size: 64px;
+            font-weight: 900;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+            animation: savingsGrow 2s ease-in-out infinite;
+        }
+        
+        @keyframes savingsGrow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            animation: rowReveal 0.6s ease-out backwards;
+        }
+        
+        .comparison-row:nth-child(1) { animation-delay: 0.1s; }
+        .comparison-row:nth-child(2) { animation-delay: 0.2s; }
+        .comparison-row:nth-child(3) { animation-delay: 0.3s; }
+        .comparison-row:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes rowReveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .comparison-header {
+            font-weight: bold;
+            color: #000;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .them {
+            color: #dc3545;
+            text-decoration: line-through;
+        }
+        
+        .you {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .mega-cta {
+            display: block;
+            background: linear-gradient(135deg, #FF0000 0%, #FFD700 50%, #FF0000 100%);
+            background-size: 200% 200%;
+            animation: ctaEmergency 1s ease infinite;
+            color: white;
+            padding: 30px 50px;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 40px auto;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes ctaEmergency {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .mega-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 80px rgba(255,0,0,0.6);
+        }
+        
+        .final-warning {
+            background: #FF0000;
+            color: white;
+            padding: 30px;
+            margin: 40px -30px -30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-warning::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.1) 50%, transparent 55%);
+            animation: warningSwipe 2s infinite;
+        }
+        
+        @keyframes warningSwipe {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            .savings-amount { font-size: 48px; }
+            .inventory-grid { grid-template-columns: 1fr; }
+            .comparison-row { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="live-ticker">
+        <div class="ticker-content">
+            <span class="ticker-item">🚨 Rodriguez Plumbing just purchased 8 Express Vans</span>
+            <span class="ticker-item">🚨 ABC Construction claimed 5 Silverado 2500HDs</span>
+            <span class="ticker-item">🚨 Express Logistics reserved entire heavy-duty inventory</span>
+            <span class="ticker-item">🚨 Only 11 units remaining in warehouse</span>
+        </div>
+    </div>
+    
+    <div class="email-container">
+        <div class="header">
+            <span class="live-badge">● LIVE UPDATE</span>
+            <h1>Your Competitors Are<br>Moving FAST</h1>
+            <p style="color: #FFD700; font-size: 20px; margin-top: 20px; position: relative; z-index: 10;">
+                {FirstName}, They're Taking YOUR Trucks
+            </p>
+        </div>
+        
+        <div style="padding: 30px;">
+            <div class="competitor-alert">
+                <h2 style="font-size: 24px; margin-bottom: 10px; position: relative; z-index: 1;">
+                    ⚠️ CRITICAL FLEET ALERT
+                </h2>
+                <p style="font-size: 18px; line-height: 1.6; position: relative; z-index: 1;">
+                    Since yesterday, 3 San Antonio businesses in YOUR industry have claimed 22 vehicles from our VIP inventory. 
+                    <strong>They're your direct competitors.</strong>
+                </p>
+            </div>
+            
+            <div class="live-feed">
+                <div class="feed-header">
+                    <div class="live-indicator"></div>
+                    <div class="feed-title">Real-Time Fleet Activity</div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-time">2 HOURS AGO</div>
+                    <div class="activity-text">Construction company purchased 6 Silverado 2500HDs - Saved $47,000</div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-time">4 HOURS AGO</div>
+                    <div class="activity-text">Delivery service claimed last 3 Express vans with upfit packages</div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-time">THIS MORNING</div>
+                    <div class="activity-text">HVAC company locked in fleet of 8 vehicles - 0.9% financing approved</div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-time">JUST NOW</div>
+                    <div class="activity-text">⚡ Someone is viewing this same offer right now...</div>
+                </div>
+            </div>
+            
+            <div class="inventory-tracker">
+                <h3 style="font-size: 28px; text-align: center; margin-bottom: 20px; position: relative; z-index: 1;">
+                    📊 LIVE INVENTORY STATUS
+                </h3>
+                
+                <div class="inventory-grid">
+                    <div class="inventory-card">
+                        <div class="inventory-number">11</div>
+                        <div class="inventory-label">Silverado HD</div>
+                        <div class="inventory-status">CRITICAL</div>
+                    </div>
+                    
+                    <div class="inventory-card">
+                        <div class="inventory-number">7</div>
+                        <div class="inventory-label">Express Vans</div>
+                        <div class="inventory-status">LOW</div>
+                    </div>
+                    
+                    <div class="inventory-card">
+                        <div class="inventory-number">3</div>
+                        <div class="inventory-label">3500 Chassis</div>
+                        <div class="inventory-status">LAST UNITS</div>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; color: #FFD700; font-size: 18px; position: relative; z-index: 1;">
+                    Next shipment: 12-16 weeks out
+                </p>
+            </div>
+            
+            <div class="savings-calculator">
+                <h3 style="font-size: 24px; margin-bottom: 20px; position: relative; z-index: 1;">
+                    While You Wait, You're Losing:
+                </h3>
+                <div class="savings-amount">$2,847</div>
+                <p style="font-size: 18px; margin-top: 10px; position: relative; z-index: 1;">
+                    EVERY SINGLE DAY
+                </p>
+                <p style="font-size: 14px; margin-top: 20px; position: relative; z-index: 1;">
+                    Based on average fleet ROI and downtime costs
+                </p>
+            </div>
+            
+            <div class="comparison-table">
+                <h3 style="font-size: 24px; text-align: center; margin-bottom: 20px; color: #000;">
+                    🔥 THEM vs YOU (If You Act Now)
+                </h3>
+                
+                <div class="comparison-row comparison-header">
+                    <div>Fleet Investment</div>
+                    <div style="text-align: center;">THEM</div>
+                    <div style="text-align: center;">YOU</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div>Price per vehicle</div>
+                    <div class="them" style="text-align: center;">$62,000</div>
+                    <div class="you" style="text-align: center;">$43,500</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div>Wait time</div>
+                    <div class="them" style="text-align: center;">12-16 weeks</div>
+                    <div class="you" style="text-align: center;">TOMORROW</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div>Service priority</div>
+                    <div class="them" style="text-align: center;">Standard</div>
+                    <div class="you" style="text-align: center;">VIP INSTANT</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div>Total 5-year cost</div>
+                    <div class="them" style="text-align: center;">$385,000</div>
+                    <div class="you" style="text-align: center;">$267,000</div>
+                </div>
+            </div>
+            
+            <div style="background: #000; color: white; padding: 30px; border-radius: 20px; margin: 30px 0; text-align: center;">
+                <h3 style="font-size: 28px; color: #FFD700; margin-bottom: 20px;">
+                    {FirstName}, HERE'S THE TRUTH:
+                </h3>
+                <p style="font-size: 18px; line-height: 1.8;">
+                    Your competitors are upgrading their fleets RIGHT NOW.<br>
+                    They're getting our best prices.<br>
+                    They're getting priority service.<br>
+                    <strong style="color: #FFD700; font-size: 22px;">They're getting YOUR competitive advantage.</strong>
+                </p>
+            </div>
+            
+            <a href="tel:2106814900" class="mega-cta">
+                🔥 SECURE MY FLEET NOW
+            </a>
+            
+            <p style="text-align: center; font-size: 16px; color: #666; margin: 20px 0;">
+                Or reply "URGENT" for immediate executive callback
+            </p>
+            
+            <div class="final-warning">
+                <p style="position: relative; z-index: 1;">
+                    ⚠️ WARNING: 2 other businesses are viewing this inventory right now
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
