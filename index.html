@@ -1142,6 +1142,25 @@
     </div>
   </footer>
   
+  <!-- Minimal script added: rewrites raw.githubusercontent.com links so they open rendered via htmlpreview.github.io -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Rewrite raw GitHub links so they open rendered HTML instead of raw text.
+      document.querySelectorAll('a[href^="https://raw.githubusercontent.com/"], a[href^="http://raw.githubusercontent.com/"]').forEach(function (a) {
+        try {
+          var raw = a.getAttribute('href');
+          if (!raw) return;
+          // Preserve existing target if set; otherwise force new tab to avoid navigation away from index
+          a.setAttribute('href', 'https://htmlpreview.github.io/?' + raw);
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener noreferrer');
+        } catch (e) {
+          // noop
+        }
+      });
+    });
+  </script>
+
   <script>
     // Simple scroll reveal animation
     const observerOptions = {
